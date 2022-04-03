@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const StyledNav = styled.nav`
 
     padding: 36px 96px;
-    /* background-color: red; */
+    background-color: aliceblue;
 
     display: flex;
     justify-content: space-between;

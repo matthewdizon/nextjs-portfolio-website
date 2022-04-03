@@ -1,11 +1,13 @@
+import Hero from "../components/Hero"
 import Layout from "../components/Layout"
 
 export default function Contact() {
     return (
         <Layout title="Contact">
-            <div>
-                <h1>Contact</h1>
-            </div>
+            <Hero
+                title="📞 Contact"
+                description="Feel free to connect with me to discuss software development and business opportunities. I am also available for freelance and internship opportunities."
+            />
         </Layout>
     )
 }
