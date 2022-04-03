@@ -60,7 +60,7 @@ export default function Navbar() {
                 <Link href="/projects">Projects</Link>
                 <Link href="/experience">Experience</Link>
                 <Link href="/contact">Contact</Link>
-                <Link href="/"><button>Resume</button></Link>
+                <Link href="/resume"><button>Resume</button></Link>
             </div>
         </StyledNav>
     )
