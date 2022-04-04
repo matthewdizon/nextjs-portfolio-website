@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Navbar from "./Navbar"
 import styled from 'styled-components'
+import Footer from './Footer'
 
 const StyledLayout = styled.div`
 `
@@ -15,7 +16,7 @@ export default function Layout({children, title}) {
             </Head>
             <Navbar />
             <main>{children}</main>
-            {/* <Footer></Footer> */}
+            <Footer />
         </StyledLayout>
     )
 }
