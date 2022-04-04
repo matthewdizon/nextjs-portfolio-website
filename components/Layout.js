@@ -2,11 +2,15 @@ import Head from 'next/head'
 import Navbar from "./Navbar"
 import styled from 'styled-components'
 import Footer from './Footer'
+import { useRouter } from "next/router";
 
 const StyledLayout = styled.div`
 `
 
 export default function Layout({children, title}) {
+
+    const router = useRouter();
+
     return (
         <StyledLayout>
             <Head>
@@ -16,7 +20,9 @@ export default function Layout({children, title}) {
             </Head>
             <Navbar />
             <main>{children}</main>
-            <Footer />
+            { router.pathname == "/" ? null :
+            (<Footer />)
+            }
         </StyledLayout>
     )
 }

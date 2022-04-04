@@ -22,7 +22,7 @@ export default function Footer() {
     return (
         <StyledFooter>
             <p>Matthew Dizon</p>
-            <div className='social-links'>
+            <div className="social-links">
                 <p>Facebook</p>
                 <p>LinkedIn</p>
                 <p>GitHub</p>
