@@ -15,14 +15,17 @@ const ProjectsContainer = styled.div`
 const Project = styled.div`
     display: flex;
     flex: 1 1 0;
-    border-left: 4px solid black;
+    /* border-left: 2px solid black; */
+
+    padding: 24px 0;
+    box-shadow: rgba(0, 0, 0, 0.1) 8px 8px 8px 8px;
 
     margin-bottom: 48px;
     /* justify-content: space-evenly; */
 
     :nth-child(even) {
         flex-direction: row-reverse;
-        border-right: 4px solid black;
+        /* border-right: 2px solid black; */
         border-left: none;
 
         .project-details {
@@ -47,9 +50,8 @@ const Project = styled.div`
         height: 300px;
         width: 50%;
         border-radius: 8px;
-        -webkit-box-shadow: -3px 2px 23px 3px rgba(0,0,0,0.75);
-        -moz-box-shadow: -3px 2px 23px 3px rgba(0,0,0,0.75);
-        box-shadow: -3px 2px 23px 3px rgba(0,0,0,0.75);
+        /* box-shadow: -3px 2px 23px 3px rgba(0,0,0,0.75); */
+        box-shadow: rgba(0, 0, 0, 0.1) 8px 8px 8px 8px;
 
         margin: 0 0 0 20px;
 
@@ -90,12 +92,20 @@ const Project = styled.div`
             
             .tech {
                 font-size: 12px;
+                font-weight: 600;
                 padding: 2px 16px;
                 margin: 0 8px 0 0;
                 border: 0.5px solid black;
-                border-radius: 20px;
+                border-radius: 4px;
 
                 background-color: aliceblue;
+
+                transition-duration: 0.3s;
+                transition-property: transform;
+
+                :hover {
+                    transform: translateY(-3px);
+                }
             }
         }
     }
@@ -122,7 +132,7 @@ export default function Projects() {
                     title="🛠 Projects"
                     description="Check out all of the projects I've made contributions to throughout my career as a software developer!"
                 />
-                <h2 style={{textAlign: "center", fontSize: "36px"}}>🌐 Websites</h2>
+                <h2 style={{textAlign: "center", fontSize: "40px"}}>🌐 Websites</h2>
                 <ProjectsContainer>
                     {
                         projects.map(project => {
@@ -147,7 +157,6 @@ export default function Projects() {
                                                 )
                                             })}
                                         </div>
-                                        <a href={project.link} target="_blank"><button>View Project</button></a>
                                     </div>
                                 </Project>
                             )
