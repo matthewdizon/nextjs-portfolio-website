@@ -95,8 +95,9 @@ const Project = styled.div`
                 font-weight: 600;
                 padding: 2px 16px;
                 margin: 0 8px 0 0;
-                border: 0.5px solid black;
-                border-radius: 4px;
+                /* border: 0.5px solid black; */
+                box-shadow: rgba(0, 0, 0, 0.1) 2px 2px 2px 2px;
+                border-radius: 10px;
 
                 background-color: aliceblue;
 
