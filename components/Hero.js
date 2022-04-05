@@ -26,12 +26,24 @@ const StyledHero = styled.div`
         width: 180px;
         background-color: black;
     }
+    
+    :after {
+        content: "";
+        position: fixed;
+        top: calc(50% - 1000px);
+        left: 0;
+        width: 500px;
+        height:2000px;
+        background: #F2F8FE;
+        transform: skew(-10deg);
+        transform-origin:top;
+        z-index: -9;
+    }
 `
 
 export default function Hero({title, description, image}) {
     return (
         <StyledHero>
-            {/* <Image src={image}/> */}
             <h1>{title}</h1>
             <p>{description}</p>
             <hr />
