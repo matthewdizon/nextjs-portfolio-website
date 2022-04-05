@@ -9,6 +9,8 @@ const ButtonsContainer = styled.div`
 
     button {
         padding: 12px 32px;
+        margin: 0 16px;
+
         border-radius: 8px;
         border: black;
         background-color: black;
@@ -43,8 +45,8 @@ export default function Resume() {
                 description="Here's my resume if you'd like to learn more about me. This was updated last 4 April 2022."
             />
             <ButtonsContainer>
-                <button>⬇️ Download Resume</button>
-                <button>☁️ View in Google Drive</button>
+                <button>⬇️ Download Resume (PDF)</button>
+                <button>☁️ View Resume in Google Drive</button>
             </ButtonsContainer>
             <ResumeContainer>
                 <embed src="/matthew-dizon-resume-4-4-2022.pdf" width="800px" height="1050px" />
