@@ -2,6 +2,24 @@ import styled from "styled-components"
 import Hero from "../components/Hero"
 import Layout from "../components/Layout"
 
+const ButtonsContainer = styled.div`
+
+    margin-top: 48px;
+    text-align: center;
+
+    button {
+        padding: 12px 32px;
+        border-radius: 8px;
+        border: black;
+        background-color: black;
+        color: white;
+
+        :hover {
+            cursor: pointer;
+            background-color: rgba(31,41,55);
+        }
+    }
+`
 const ResumeContainer = styled.div`
     display: flex;
     justify-content: center;
@@ -22,18 +40,18 @@ export default function Resume() {
         <Layout title="Resume">
             <Hero
                 title="📑 Resume"
-                description="Here's my resume if you'd like to learn more about me. This was updated last 12 February 2022."
+                description="Here's my resume if you'd like to learn more about me. This was updated last 4 April 2022."
             />
-            <div>
-                <button>Download Resume</button>
-                <button>View in Google Drive</button>
-            </div>
+            <ButtonsContainer>
+                <button>⬇️ Download Resume</button>
+                <button>☁️ View in Google Drive</button>
+            </ButtonsContainer>
             <ResumeContainer>
-                <embed src="/Resume_2022_Feb_12.pdf" width="800px" height="1050px" />
-                <div>
+                <embed src="/matthew-dizon-resume-4-4-2022.pdf" width="800px" height="1050px" />
+                {/* <div>
                     <h1>Highlights</h1>
                     <p> 1</p>
-                </div>
+                </div> */}
             </ResumeContainer>
         </Layout>
     )

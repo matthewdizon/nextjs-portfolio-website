@@ -4,7 +4,8 @@ import { useRouter } from "next/router";
 
 const StyledNav = styled.nav`
 
-    padding: 36px 96px;
+    height: 20vh;
+    padding: 0 96px;
     background-color: aliceblue;
 
     display: flex;
