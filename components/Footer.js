@@ -1,20 +1,30 @@
 import styled from 'styled-components'
+import Image from 'next/image'
 
 const StyledFooter = styled.footer`
     display: flex;
     justify-content: space-between;
+    text-align: center;
+    align-items: center;
 
-    background-color: black;
-    color: white;
+    /* background-color: black;
+    color: white; */
 
-    padding: 2rem 96px;
+    border-top: 2px solid black;
+    margin: 8rem 96px 2rem;
 
     .social-links {
-        display: flex;
+      display: flex;
 
-        p {
-            margin: auto 1rem;
+      span {
+        margin: 0 4px !important;
+
+        img {
+          :hover {
+            filter: grayscale(80%) !important;
+          }
         }
+      }
     }
 `
 
@@ -23,9 +33,15 @@ export default function Footer() {
         <StyledFooter>
             <p>Matthew Dizon</p>
             <div className="social-links">
-                <p>Facebook</p>
-                <p>LinkedIn</p>
-                <p>GitHub</p>
+                <a href="https://github.com/matthewdizon" target="_blank">
+                <Image src="/github.svg" height={30} width={30} />
+                </a>
+                <a href="https://www.facebook.com/Nozid16/" target="_blank">
+                <Image src="/fb.svg" height={30} width={30} />
+                </a>
+                <a href="https://www.linkedin.com/in/matthewdominicdizon/" target="_blank">
+                <Image src="/linkedin.svg" height={30} width={30} />
+                </a>
             </div>
         </StyledFooter>
     )

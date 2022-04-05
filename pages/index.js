@@ -60,8 +60,14 @@ const StyledHome = styled.div`
       display: flex;
       margin-top: 2rem;
 
-      p {
-        margin: 0 4px;
+      span {
+        margin: 0 4px !important;
+
+        img {
+          :hover {
+            filter: grayscale(80%) !important;
+          }
+        }
       }
     }
   }
@@ -95,9 +101,15 @@ export default function Home() {
             <button className='secondary'>🗓 Schedule a Meeting</button>
           </div>
           <div className='social-links'>
-            <p>Github</p>
-            <p>Facebook</p>
-            <p>LinkedIn</p>
+            <a href="https://github.com/matthewdizon" target="_blank">
+              <Image src="/github.svg" height={30} width={30} />
+            </a>
+            <a href="https://www.facebook.com/Nozid16/" target="_blank">
+              <Image src="/fb.svg" height={30} width={30} />
+            </a>
+            <a href="https://www.linkedin.com/in/matthewdominicdizon/" target="_blank">
+              <Image src="/linkedin.svg" height={30} width={30} />
+            </a>
           </div>
         </div>
         <div className='image'>
