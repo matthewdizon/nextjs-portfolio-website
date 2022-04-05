@@ -2,6 +2,7 @@ import Hero from "../components/Hero"
 import Layout from "../components/Layout"
 import styled from 'styled-components'
 import Image from 'next/image'
+import SimpleAccordion from "../components/Accordion"
 
 const AboutContainer = styled.div`
     display: flex;
@@ -141,6 +142,14 @@ export default function About() {
 
                     <h2>Interests</h2>
                     <div>
+                    <SimpleAccordion
+                        title="This is my title"
+                        content="And this is my content"
+                    />
+                    <SimpleAccordion
+                        title="🤖 Machine Learning"
+                        content="And this is my content"
+                    />
                     </div>
 
                     <h2>Books & Notes</h2>
