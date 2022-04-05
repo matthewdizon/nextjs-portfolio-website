@@ -13,6 +13,10 @@ const StyledFooter = styled.footer`
     border-top: 2px solid black;
     margin: 8rem 96px 2rem;
 
+    p {
+      font-weight: 700;
+    }
+
     .social-links {
       display: flex;
 

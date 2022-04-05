@@ -43,6 +43,7 @@ const StyledNav = styled.nav`
         }
 
         button {
+            margin-left: 8px;
             padding: 12px 32px;
             border-radius: 8px;
             border: black;
@@ -56,7 +57,6 @@ const StyledNav = styled.nav`
         }
 
         .active {
-            /* color: red; */
             font-weight: 600;
         }
     }
