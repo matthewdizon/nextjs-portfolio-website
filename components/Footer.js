@@ -37,13 +37,13 @@ export default function Footer() {
         <StyledFooter>
             <p>Matthew Dizon</p>
             <div className="social-links">
-                <a href="https://github.com/matthewdizon" target="_blank">
+                <a href="https://github.com/matthewdizon" target="_blank" rel="noopener noreferrer">
                 <Image src="/github.svg" height={30} width={30} />
                 </a>
-                <a href="https://www.facebook.com/Nozid16/" target="_blank">
+                <a href="https://www.facebook.com/Nozid16/" target="_blank" rel="noopener noreferrer">
                 <Image src="/fb.svg" height={30} width={30} />
                 </a>
-                <a href="https://www.linkedin.com/in/matthewdominicdizon/" target="_blank">
+                <a href="https://www.linkedin.com/in/matthewdominicdizon/" target="_blank" rel="noopener noreferrer">
                 <Image src="/linkedin.svg" height={30} width={30} />
                 </a>
             </div>

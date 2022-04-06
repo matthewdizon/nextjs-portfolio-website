@@ -159,7 +159,7 @@ export default function About() {
                                 <Image src="/atomic-habits.jpg" layout="fill" objectFit='contain' />
                             </div>
                             <div>
-                                <a href="">
+                                <a href=""rel="noopener noreferrer">
                                     <h3>Atomic Habits</h3>
                                 </a>
                                 <p> This book helped me understand how habits are formed and what we can do to build long-lasting chains of cues, cravings, responses, and rewards to create systems that will help us achieve our goals. </p>

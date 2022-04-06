@@ -141,7 +141,7 @@ export default function Projects() {
                                 <Project>
                                     <div className="image-container">
                                         {/* <Image src={project.image} alt={project.title} width="1000" height="500" objectFit='cover'/> */}
-                                        <a href={project.link} target="_blank">
+                                        <a href={project.link} target="_blank" rel="noopener noreferrer">
                                             <Image src={project.image} alt={project.title} layout="fill" objectFit='cover' />
                                         </a>
                                     </div>
