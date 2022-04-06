@@ -136,9 +136,9 @@ export default function Projects() {
                 <h2 style={{textAlign: "center", fontSize: "40px"}}>🌐 Websites</h2>
                 <ProjectsContainer>
                     {
-                        projects.map(project => {
+                        projects.map((project, index) => {
                             return (
-                                <Project>
+                                <Project key={index}>
                                     <div className="image-container">
                                         {/* <Image src={project.image} alt={project.title} width="1000" height="500" objectFit='cover'/> */}
                                         <a href={project.link} target="_blank" rel="noopener noreferrer">
@@ -149,9 +149,9 @@ export default function Projects() {
                                         <h1>{project.title}</h1>
                                         <p>{project.description}</p>
                                         <div className="tech-container">
-                                            {project.tech.map(tech => {
+                                            {project.tech.map((tech, index) => {
                                                 return (
-                                                    <div className="tech">
+                                                    <div key={index} className="tech">
                                                         {/* <p>{tech}</p> */}
                                                         {tech}
                                                     </div>
