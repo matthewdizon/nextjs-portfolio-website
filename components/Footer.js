@@ -30,6 +30,14 @@ const StyledFooter = styled.footer`
         }
       }
     }
+
+    @media (max-width: 900px) {
+      margin: 8rem 48px 2rem;
+    }
+
+    @media (max-width: 400px) {
+      margin: 8rem 24px 2rem;
+    }
 `
 
 export default function Footer() {

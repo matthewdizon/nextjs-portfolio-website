@@ -39,6 +39,22 @@ const StyledHero = styled.div`
         transform-origin:top;
         z-index: -9;
     }
+
+    @media (max-width: 900px) {
+      h1 {
+          font-size: 40px;
+      }
+
+      p {
+          width: 80%;
+      }
+    }
+
+    @media (max-width: 900px) {
+        :after {
+            width: 400px;
+        }
+    }
 `
 
 export default function Hero({title, description, image}) {

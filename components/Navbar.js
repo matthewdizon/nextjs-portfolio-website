@@ -91,6 +91,7 @@ const StyledNav = styled.nav`
 
     @media (max-width: 900px) {
         padding: 0 48px;
+        height: auto;
     }
 
     @media (max-width: 805px) {
@@ -153,6 +154,18 @@ const StyledNav = styled.nav`
                 margin: 0;
                 width: 100%;
             }
+        }
+    }
+
+    @media (max-width: 400px) {
+        height: auto;
+
+        .nav-responsive {
+            padding: 24px;
+        }
+
+        .nav-links-responsive {
+            padding: 0 24px;
         }
     }
 `
