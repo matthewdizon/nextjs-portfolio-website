@@ -48,12 +48,10 @@ const StyledHero = styled.div`
       p {
           width: 80%;
       }
-    }
 
-    @media (max-width: 900px) {
-        :after {
-            width: 400px;
-        }
+      :after {
+        width: 400px;
+      }
     }
 `
 

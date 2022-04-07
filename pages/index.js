@@ -77,6 +77,88 @@ const StyledHome = styled.div`
     width: 50%;
     position: relative;
   }
+
+  @media (max-width: 1370px) {
+    .info {
+      h1 {
+        font-size: 35px;
+      }
+
+      h2 {
+        font-size: 30px;
+      }
+
+      .cta-buttons {
+        button {
+          padding: 8px 12px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 990px) {
+    .info {
+      h1 {
+        font-size: 30px;
+      }
+
+      h2 {
+        font-size: 24px;
+      }
+
+      .cta-buttons {
+        button {
+          padding: 8px 12px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 900px) {
+    padding: 0 48px;
+  }
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+    height: 100vh;
+
+    text-align: center;
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+    }
+
+    .social-links {
+      justify-content: center;
+    }
+
+    .info, .image {
+      width: 100%;
+    }
+
+    .info {
+      h1 {
+        font-size: 36px;
+      }
+
+      h2 {
+        font-size: 28px;
+      }
+    }
+  }
+
+  @media (max-width: 400px) {
+    padding: 0 24px;
+
+    .cta-buttons {
+      flex-direction: column;
+      
+      .secondary {
+        margin: 8px 0 0 0 !important;
+      }
+    }
+  }
 `
 
 export default function Home() {

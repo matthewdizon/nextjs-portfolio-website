@@ -77,6 +77,40 @@ const AboutContainer = styled.div`
             width: 100%;
         }
     }
+
+    @media (max-width: 900px) {
+        padding: 0 48px;
+    }
+
+    @media (max-width: 800px) {
+        flex-direction: column-reverse;
+
+        .main-content, .sub-content {
+            width: 100%;
+        }
+
+        .sub-content {
+            display: flex;
+
+            .currently {
+                margin-left: 40px;
+            }
+        }
+    }
+
+    @media (max-width: 600px) {
+        .sub-content {
+            flex-direction: column;
+            
+            .currently {
+                margin: 0;
+            }
+        }
+    }
+
+    @media (max-width: 400px) {
+        padding: 0 24px;
+    }
 `
 
 export default function About() {
@@ -88,7 +122,7 @@ export default function About() {
             />
             <AboutContainer>
                 <div className="sub-content">
-                    <div>
+                    <div className="skills">
                         <h2>Skills</h2>
                         <div>
                             <p>→ Python</p>                    
@@ -104,8 +138,13 @@ export default function About() {
                             <p>→ Test</p>   
                         </div>    
                     </div>      
-                    <div>
+                    <div className="currently">
                         <h2>Currently, I'm...</h2>
+                        <p>→ VP of Engineering @ User Experience Society</p>
+                        <p>→ VP of Engineering @ User Experience Society</p>
+                        <p>→ VP of Engineering @ User Experience Society</p>
+                        <p>→ VP of Engineering @ User Experience Society</p>
+                        <p>→ VP of Engineering @ User Experience Society</p>
                         <p>→ VP of Engineering @ User Experience Society</p>
                     </div>       
                 </div>
@@ -167,7 +206,7 @@ export default function About() {
                         </div>
                     </div>
 
-                    <h2>Notion Templates</h2>
+                    {/* <h2>Notion Templates</h2> */}
                     <div>
                     </div>
                 </div>

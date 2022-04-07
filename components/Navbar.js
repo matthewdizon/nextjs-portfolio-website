@@ -174,7 +174,6 @@ export default function Navbar() {
 
     const router = useRouter();
     const [open, setOpen] = useState(true)
-    console.log(open)
 
     return (
         <StyledNav>
