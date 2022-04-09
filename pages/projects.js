@@ -1,6 +1,4 @@
 import Image from "next/image"
-import { useState } from "react"
-import { useEffect } from "react"
 import styled from "styled-components"
 
 import Layout from "../components/Layout"
@@ -8,68 +6,56 @@ import Hero from "../components/Hero"
 
 const ProjectsContainer = styled.div`
     display: flex;
-    flex-direction: column;
-    padding: 0 96px;
+    flex-wrap: wrap;
+    padding: 24px 96px;
+    column-gap: 50px;
+
+    @media (max-width: 900px) {
+        padding: 24px 48px;
+    }
+
+    @media (max-width: 400px) {
+        padding: 24px;
+    }
 `
 
 const Project = styled.div`
     display: flex;
-    flex: 1 1 0;
-    /* border-left: 2px solid black; */
+    flex-direction: column;
+    flex: 1 0 45%;
 
-    padding: 24px 0;
-    box-shadow: rgba(0, 0, 0, 0.1) 8px 8px 8px 8px;
+    margin-bottom: 24px;
 
-    margin-bottom: 48px;
-    /* justify-content: space-evenly; */
+    :last-child {
+        flex: 0 0 45%;
 
-    :nth-child(even) {
-        flex-direction: row-reverse;
-        /* border-right: 2px solid black; */
-        border-left: none;
-
-        .project-details {
-            text-align: right;
-        }
-
-        .image-container {
-            margin: 0 20px 0 0;
-        }
-
-        .tech-container {
-            justify-content: flex-end;
-
-            .tech {
-                margin: 0 0 0 8px !important;
-            }
+        @media (max-width: 624px) {
+            flex: 1 1 45%;
         }
     }
 
     .image-container {
         position: relative;
         height: 300px;
-        width: 50%;
         border-radius: 8px;
-        /* box-shadow: -3px 2px 23px 3px rgba(0,0,0,0.75); */
         box-shadow: rgba(0, 0, 0, 0.1) 8px 8px 8px 8px;
-
-        margin: 0 0 0 20px;
 
         transition-duration: 0.3s;
         transition-property: transform;
 
         img {
             border-radius: 8px;
-        }
+            transition-duration: 0.3s;
+            transition-property: transform;
 
-        :hover {
-            transform: scale(1.05);
+            :hover {
+                transform: scale(1.05);
+            }
         }
     }
 
     .project-details {
-        width: 50%;
-        padding: 0 24px;
+        padding: 16px 0;
 
         display: flex;
         flex-direction: column;
@@ -78,6 +64,11 @@ const Project = styled.div`
 
         h1 {
             margin: 0;
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 12px;
         }
 
         button {
@@ -95,7 +86,6 @@ const Project = styled.div`
                 font-weight: 600;
                 padding: 2px 16px;
                 margin: 0 8px 0 0;
-                /* border: 0.5px solid black; */
                 box-shadow: rgba(0, 0, 0, 0.1) 2px 2px 2px 2px;
                 border-radius: 10px;
 
@@ -114,18 +104,63 @@ const Project = styled.div`
 
 export default function Projects() {
 
-    const [projects, setProjects] = useState([])
-
-    const fetchProjects = async () => {
-        const response = await fetch('/api/projects')
-        const data = await response.json()
-        setProjects(data)
-    }
-
-    useEffect(() => {
-        fetchProjects()
-    }, [])
-
+    const projects = [
+        {
+            link: "https://www.brigadaeskwela.org/",
+            image: "/brigadaeskwela.png",
+            title: "Brigada E-Skwela Website",
+            description: "A non-stock, non-profit, youth-led organization that conducts various education-based programs",
+            tech: [
+                "Vue",
+                "Strapi"
+            ]
+        },
+        {
+            link: "https://oursanggu.com/",
+            image: "/sanggu.png",
+            title: "OurSanggu ADMU Website",
+            description: "Sole Autonomous Student Government of Ateneo de Manila University",
+            tech: [
+                "React",
+                "Gatsby",
+                "Prismic"
+            ]
+        },
+        {
+            link: "https://oursanggu.com/",
+            image: "/sanggu.png",
+            title: "OurSanggu ADMU Website",
+            description: "Sole Autonomous Student Government of Ateneo de Manila University",
+            tech: [
+                "React",
+                "Gatsby",
+                "Prismic"
+            ]
+        },
+        {
+            link: "https://oursanggu.com/",
+            image: "/sanggu.png",
+            title: "OurSanggu ADMU Website",
+            description: "Sole Autonomous Student Government of Ateneo de Manila University",
+            tech: [
+                "React",
+                "Gatsby",
+                "Prismic"
+            ]
+        },
+        {
+            link: "https://oursanggu.com/",
+            image: "/sanggu.png",
+            title: "OurSanggu ADMU Website",
+            description: "Sole Autonomous Student Government of Ateneo de Manila University",
+            tech: [
+                "React",
+                "Gatsby",
+                "Prismic"
+            ]
+        },
+    ]
+    
     return (
         <Layout title="Projects">
             <div>
@@ -133,14 +168,12 @@ export default function Projects() {
                     title="🛠 Projects"
                     description="Check out all of the projects I've made contributions to throughout my career as a software developer!"
                 />
-                <h2 style={{textAlign: "center", fontSize: "40px"}}>🌐 Websites</h2>
                 <ProjectsContainer>
                     {
                         projects.map((project, index) => {
                             return (
                                 <Project key={index}>
                                     <div className="image-container">
-                                        {/* <Image src={project.image} alt={project.title} width="1000" height="500" objectFit='cover'/> */}
                                         <a href={project.link} target="_blank" rel="noopener noreferrer">
                                             <Image src={project.image} alt={project.title} layout="fill" objectFit='cover' />
                                         </a>
@@ -152,7 +185,6 @@ export default function Projects() {
                                             {project.tech.map((tech, index) => {
                                                 return (
                                                     <div key={index} className="tech">
-                                                        {/* <p>{tech}</p> */}
                                                         {tech}
                                                     </div>
                                                 )
