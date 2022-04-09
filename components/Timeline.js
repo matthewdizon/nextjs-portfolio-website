@@ -125,7 +125,11 @@ export default function ExperienceTimeline({experiences}) {
                             <TimelineOppositeContent>
                                 <h1 className="date">{experience.date}</h1>
                                 <StyledAccomplishments test={index}>
-                                    <li>Hello my name is chu and it is sunny my name is chu and it is sunny my name is chu and it is sunny my name is chu and it is sunny my name is chu and it is sunny my name is chu and it is sunny my name is chu and it is sunny my name is chu and it is sunny right lol hello it works naman properly</li>
+                                    {experience.accomplishments.map((accomplishment, index) => {
+                                        return (
+                                            <li key={index}>{accomplishment}</li>
+                                        )
+                                    })}
                                 </StyledAccomplishments>
                             </TimelineOppositeContent>
                             <TimelineSeparator>

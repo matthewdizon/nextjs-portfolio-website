@@ -305,7 +305,7 @@ export default function About() {
                     <div>
                         {books.map((book, index) => {
                             return (
-                                <div className="book-container">
+                                <div className="book-container" key={index}>
                                     <div className="image-container">
                                         <a href={book.notes}>
                                             <Image src={book.image} layout="fill" objectFit='contain' />
