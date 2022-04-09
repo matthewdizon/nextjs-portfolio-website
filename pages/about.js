@@ -43,17 +43,28 @@ const AboutContainer = styled.div`
     .tech-stack-container {
         display: flex;
         flex-wrap: wrap;
+        gap: 24px;
     }
 
     .tech-container {
+        flex: 1 20%;
+
         border-radius: 4px;
         padding: 1.5rem;
         text-align: center;
-        width: 20%;
+        /* width: 20%; */
 
         box-shadow: rgba(0, 0, 0, 0.1) 4px 4px 4px 4px;
         background-color: aliceblue;
-        margin: 0 1rem 1rem 0;
+        /* margin: 0 1rem 1rem 0; */
+
+        @media (max-width: 600px) {
+            flex: 1 25%;
+        }
+
+        @media (max-width: 450px) {
+            flex: 1 40%;
+        }
     }
 
     .book-container {
@@ -69,12 +80,35 @@ const AboutContainer = styled.div`
 
         h3 {
             font-size: 24px;
+
+            :hover {
+                color: #5F706A;
+            }
         }
 
         .image-container {
             height: 200px;
             position: relative;
             width: 100%;
+
+            transition: transform 0.5s;
+
+            :hover {
+                transform: scale(1.1)
+            }
+        }
+
+        .info-container {
+            margin-left: 48px;
+        }
+
+        @media (max-width: 600px) {
+            flex-direction: column;
+            text-align: center;
+
+            .info-container {
+                margin: 0;
+            }
         }
     }
 
@@ -195,9 +229,11 @@ export default function About() {
                     <div>
                         <div className="book-container">
                             <div className="image-container">
-                                <Image src="/atomic-habits.jpg" layout="fill" objectFit='contain' />
+                                <a href="">
+                                    <Image src="/atomic-habits.jpg" layout="fill" objectFit='contain' />
+                                </a>
                             </div>
-                            <div>
+                            <div className="info-container">
                                 <a href=""rel="noopener noreferrer">
                                     <h3>Atomic Habits</h3>
                                 </a>
