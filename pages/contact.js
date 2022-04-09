@@ -2,6 +2,7 @@ import Hero from "../components/Hero"
 import Layout from "../components/Layout"
 import styled from 'styled-components'
 import TextField from '@mui/material/TextField';
+
 const ContactContainer = styled.div`
     
     padding: 48px 96px;
@@ -20,7 +21,6 @@ const ContactContainer = styled.div`
         padding: 24px 0;
         
         box-shadow: rgba(0, 0, 0, 0.1) 4px 4px 4px 4px;
-        /* box-shadow: 0 4px 10px var(black); */
 
         transition-duration: 0.3s;
         transition-property: transform;
@@ -125,6 +125,40 @@ const EmailFormContainer = styled.div`
 `
 
 export default function Contact() {
+
+    const contacts = [
+        {
+            emoji: "📧",
+            title: "Email",
+            description: "Send me an email at dominic.dizon@obf.ateneo.edu",
+        },
+        {
+            emoji: "📧",
+            title: "Email",
+            description: "Send me an email at dominic.dizon@obf.ateneo.edu",
+        },
+        {
+            emoji: "📧",
+            title: "Email",
+            description: "Send me an email at dominic.dizon@obf.ateneo.edu",
+        },
+        {
+            emoji: "📧",
+            title: "Email",
+            description: "Send me an email at dominic.dizon@obf.ateneo.edu",
+        },
+        {
+            emoji: "📧",
+            title: "Email",
+            description: "Send me an email at dominic.dizon@obf.ateneo.edu",
+        },
+        {
+            emoji: "📧",
+            title: "Email",
+            description: "Send me an email at dominic.dizon@obf.ateneo.edu",
+        },
+    ]
+
     return (
         <Layout title="Contact">
             <Hero
@@ -132,26 +166,15 @@ export default function Contact() {
                 description="Feel free to connect with me to discuss software development and business opportunities. I am also available for freelance and internship opportunities."
             />
             <ContactContainer>
-                <div className="contact">
-                    <span>📧</span>
-                    <h2>Email</h2>
-                    <p>Send me an email at dominic.dizon@obf.ateneo.edu</p>
-                </div>
-                <div className="contact">
-                    <span>📧</span>
-                    <h2>Email</h2>
-                    <p>Send me an email at dominic.dizon@obf.ateneo.edu</p>
-                </div>
-                <div className="contact">
-                    <span>📧</span>
-                    <h2>Email</h2>
-                    <p>Send me an email at dominic.dizon@obf.ateneo.edu</p>
-                </div>
-                <div className="contact">
-                    <span>📧</span>
-                    <h2>Email</h2>
-                    <p>Send me an email at dominic.dizon@obf.ateneo.edu</p>
-                </div>
+                {contacts.map((contact, index) => {
+                    return (
+                        <div className="contact" key={index}>
+                            <span>{contact.emoji}</span>
+                            <h2>{contact.title}</h2>
+                            <p>{contact.description}</p>
+                        </div>
+                    )
+                })}
             </ContactContainer>
             <EmailFormContainer>
                 <form
@@ -186,18 +209,6 @@ export default function Contact() {
                                 name="lname"
                                 className="textfield"
                             />
-                            {/* <label>
-                                Email
-                                <input type="email" name="email" required/>
-                            </label>
-                            <label>
-                                First Name
-                                <input type="text" name="fname" required/>
-                            </label>
-                            <label>
-                                Last Name
-                                <input type="text" name="lname" required/>
-                            </label> */}
                         </div>
 
                         <div className="mail-info">
@@ -219,14 +230,6 @@ export default function Contact() {
                                 multiline
                                 rows={4}
                             />
-                            {/* <label>
-                                Title
-                                <input type="text" name="title" required/>
-                            </label>
-                            <label>
-                                Message
-                                <input className="message-text-area" name="message" required></input>
-                            </label> */}
                         </div>
                     </div>
 

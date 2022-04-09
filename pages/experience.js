@@ -8,30 +8,55 @@ const experiences = [
         organization: "User Experience Society",
         date: "June '20 - Jaunary '21",
         image: "/atomic-habits.jpg",
+        accomplishments: [
+            "this is my first accomplishment",
+            "this is my second accomplishment",
+            "this is my third accomplishment",
+        ],
     },
     {
         position: "Vice President of Engineering",
         organization: "User Experience Society",
         date: "June '20 - Jaunary '21",
         image: "/atomic-habits.jpg",
+        accomplishments: [
+            "this is my first accomplishment",
+            "this is my second accomplishment",
+            "this is my third accomplishment",
+        ],
     },
     {
         position: "Vice President of Engineering",
         organization: "User Experience Society",
         date: "June '20 - Jaunary '21",
         image: "/atomic-habits.jpg",
+        accomplishments: [
+            "this is my first accomplishment",
+            "this is my second accomplishment",
+            "this is my third accomplishment",
+        ],
     },
     {
         position: "Vice President of Engineering",
         organization: "User Experience Society",
         date: "June '20 - Jaunary '21",
         image: "/atomic-habits.jpg",
+        accomplishments: [
+            "this is my first accomplishment",
+            "this is my second accomplishment",
+            "this is my third accomplishment",
+        ],
     },
     {
         position: "Vice President of Engineering",
         organization: "User Experience Society",
         date: "June '20 - Jaunary '21",
         image: "/atomic-habits.jpg",
+        accomplishments: [
+            "this is my first accomplishment",
+            "this is my second accomplishment",
+            "this is my third accomplishment",
+        ],
     },
 ]
 
@@ -45,38 +70,6 @@ export default function Experience() {
             <ExperienceTimeline
                 experiences={experiences}
             />
-            {/* <ExperienceContainer>
-                <div className="experience">
-                    <div className="image-container">
-                        <Image src="/atomic-habits.jpg" height={200} width={200} objectFit="cover" />
-                    </div>
-                    <div className="info-container">
-                        <h2>Senior Software Engineer E awoeijf aoiwjef oaiwjef</h2>
-                        <h3>Organization</h3>
-                    </div>
-                    <span className="date">June '20 - January '21</span>
-                </div>
-                <div className="experience">
-                    <div className="image-container">
-                        <Image src="/atomic-habits.jpg" height={200} width={200} objectFit="cover" />
-                    </div>
-                    <div className="info-container">
-                        <h2>Senior Software Engineer E awoeijf aoiwjef oaiwjef</h2>
-                        <h3>Organization</h3>
-                    </div>
-                    <span className="date">June '20 - January '21</span>
-                </div>
-                <div className="experience">
-                    <div className="image-container">
-                        <Image src="/atomic-habits.jpg" height={200} width={200} objectFit="cover" />
-                    </div>
-                    <div className="info-container">
-                        <h2>Senior Software Engineer E awoeijf aoiwjef oaiwjef</h2>
-                        <h3>Organization</h3>
-                    </div>
-                    <span className="date">June '20 - January '21</span>
-                </div>
-            </ExperienceContainer> */}
         </Layout>
     )
 }

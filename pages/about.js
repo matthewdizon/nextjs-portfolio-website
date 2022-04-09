@@ -51,8 +51,12 @@ const AboutContainer = styled.div`
 
         border-radius: 4px;
         padding: 1.5rem;
+        /* padding: 2rem; */
         text-align: center;
-        /* width: 20%; */
+
+        position: relative;
+        /* height: 200px; */
+        /* width: 100%; */
 
         box-shadow: rgba(0, 0, 0, 0.1) 4px 4px 4px 4px;
         background-color: aliceblue;
@@ -76,7 +80,17 @@ const AboutContainer = styled.div`
         
         background-color: #94C2A4;
         color: white;
-        /* width: 50%; */
+
+        margin-bottom: 8px;
+
+        :nth-child(even) {
+            flex-direction: row-reverse;
+            
+            .info-container {
+                margin-left: 0;
+                margin-right: 48px;
+            }
+        }
 
         h3 {
             font-size: 24px;
@@ -119,6 +133,14 @@ const AboutContainer = styled.div`
     @media (max-width: 800px) {
         flex-direction: column-reverse;
 
+        .book-container {
+
+            :nth-child(even) {
+                flex-direction: column;
+            }
+            
+        }
+
         .main-content, .sub-content {
             width: 100%;
         }
@@ -148,6 +170,78 @@ const AboutContainer = styled.div`
 `
 
 export default function About() {
+
+    const skills = [
+        "Python",
+        "Django",
+        "JavaScript",
+        "React",
+        "Data Preprocessing",
+        "Data Visualization",
+        "Artificial Intelligence",
+        "Machine Learning",
+        "Time Management",
+    ]
+
+    const currents = [
+        "VP of Engineering @ User Experience Society",
+        "VP of Engineering @ User Experience Society",
+        "VP of Engineering @ User Experience Society",
+        "VP of Engineering @ User Experience Society",
+        "VP of Engineering @ User Experience Society",
+    ]
+
+    const techs = [
+        "/github.svg",
+        "/github.svg",
+        "/github.svg",
+        "/atomic-habits.jpg",
+        "/chu.png",
+        "/chu.png",
+        "/chu.png",
+        "/chu.png",
+    ]
+
+    const interests = [
+        {
+            title: "🤖 Machine Learning",
+            description: "This is why I am interested in Machine Learning",
+        },
+        {
+            title: "🤖 Machine Learning",
+            description: "This is why I am interested in Machine Learning",
+        },
+        {
+            title: "🤖 Machine Learning",
+            description: "This is why I am interested in Machine Learning",
+        },
+        {
+            title: "🤖 Machine Learning",
+            description: "This is why I am interested in Machine Learning",
+        },
+    ]
+
+    const books = [
+        {
+            title: "Atomic Habits",
+            description: "This book helped me understand how habits are formed and what we can do to build long-lasting chains of cues, cravings, responses, and rewards to create systems that will help us achieve our goals.",
+            image: "/atomic-habits.jpg",
+            notes: "https://www.notion.so/matthewdizon/Atomic-Habits-0dab5352f58949ae87bae1b441c8b2f0",
+        },
+        {
+            title: "Atomic Habits",
+            description: "This book helped me understand how habits are formed and what we can do to build long-lasting chains of cues, cravings, responses, and rewards to create systems that will help us achieve our goals.",
+            image: "/atomic-habits.jpg",
+            notes: "https://www.notion.so/matthewdizon/Atomic-Habits-0dab5352f58949ae87bae1b441c8b2f0",
+        },
+        {
+            title: "Atomic Habits",
+            description: "This book helped me understand how habits are formed and what we can do to build long-lasting chains of cues, cravings, responses, and rewards to create systems that will help us achieve our goals.",
+            image: "/atomic-habits.jpg",
+            notes: "https://www.notion.so/matthewdizon/Atomic-Habits-0dab5352f58949ae87bae1b441c8b2f0",
+        },
+    ]
+
     return (
         <Layout title="About">
             <Hero
@@ -159,27 +253,22 @@ export default function About() {
                     <div className="skills">
                         <h2>Skills</h2>
                         <div>
-                            <p>→ Python</p>                    
-                            <p>→ Django</p>                    
-                            <p>→ JavaScript</p>                    
-                            <p>→ React</p>                    
-                            <p>→ Data Preprocessing</p>                    
-                            <p>→ Data Visualization</p>                    
-                            <p>→ Artificial Intelligence</p>                    
-                            <p>→ Machine Learning</p>                    
-                            <p>→ Time Management</p>                    
-                            <p>→ Test</p>                    
-                            <p>→ Test</p>   
+                            {skills.map((skill, index) => {
+                                return (
+                                    <p key={index}>→ {skill}</p>                    
+                                )
+                            })}
                         </div>    
                     </div>      
                     <div className="currently">
                         <h2>Currently, I'm...</h2>
-                        <p>→ VP of Engineering @ User Experience Society</p>
-                        <p>→ VP of Engineering @ User Experience Society</p>
-                        <p>→ VP of Engineering @ User Experience Society</p>
-                        <p>→ VP of Engineering @ User Experience Society</p>
-                        <p>→ VP of Engineering @ User Experience Society</p>
-                        <p>→ VP of Engineering @ User Experience Society</p>
+                        <div>
+                            {currents.map((current, index) => {
+                                return (
+                                    <p key={index}>→ {current}</p>                    
+                                )
+                            })}
+                        </div>
                     </div>       
                 </div>
                 <div className="main-content">
@@ -190,56 +279,47 @@ export default function About() {
                     </div>
                     <h2>Technology Stack</h2>
                     <div className="tech-stack-container">
-                        <div className="tech-container">
-                            <Image src="/github.svg" height={50} width={50} />
-                        </div>
-                        <div className="tech-container">
-                            <Image src="/github.svg" height={50} width={50} />
-                        </div>
-                        <div className="tech-container">
-                            <Image src="/github.svg" height={50} width={50} />
-                        </div>
-                        <div className="tech-container">
-                            <Image src="/github.svg" height={50} width={50} />
-                        </div>
-                        <div className="tech-container">
-                            <Image src="/github.svg" height={50} width={50} />
-                        </div>
-                        <div className="tech-container">
-                            <Image src="/github.svg" height={50} width={50} />
-                        </div>
-                        <div className="tech-container">
-                            <Image src="/github.svg" height={50} width={50} />
-                        </div>
+                        {techs.map((tech, index) => {
+                            return (
+                                <div className="tech-container" key={index}>
+                                    <Image src={tech} layout="fill" objectFit="contain" />
+                                </div>
+                            )
+                        })}
                     </div>
 
                     <h2>Interests</h2>
                     <div>
-                    <SimpleAccordion
-                        title="This is my title"
-                        content="And this is my content"
-                    />
-                    <SimpleAccordion
-                        title="🤖 Machine Learning"
-                        content="And this is my content"
-                    />
+                        {interests.map((interest, index) => {
+                            return (
+                                <SimpleAccordion
+                                    title={interest.title}
+                                    content={interest.description}
+                                    key={index}
+                                />
+                            )
+                        })}
                     </div>
 
                     <h2>Books & Notes</h2>
                     <div>
-                        <div className="book-container">
-                            <div className="image-container">
-                                <a href="">
-                                    <Image src="/atomic-habits.jpg" layout="fill" objectFit='contain' />
-                                </a>
-                            </div>
-                            <div className="info-container">
-                                <a href=""rel="noopener noreferrer">
-                                    <h3>Atomic Habits</h3>
-                                </a>
-                                <p> This book helped me understand how habits are formed and what we can do to build long-lasting chains of cues, cravings, responses, and rewards to create systems that will help us achieve our goals. </p>
-                            </div>
-                        </div>
+                        {books.map((book, index) => {
+                            return (
+                                <div className="book-container">
+                                    <div className="image-container">
+                                        <a href={book.notes}>
+                                            <Image src={book.image} layout="fill" objectFit='contain' />
+                                        </a>
+                                    </div>
+                                    <div className="info-container">
+                                        <a href={book.notes} rel="noopener noreferrer">
+                                            <h3>{book.title}</h3>
+                                        </a>
+                                        <p>{book.description}</p>
+                                    </div>
+                                </div>
+                            )
+                        })}
                     </div>
 
                     {/* <h2>Notion Templates</h2> */}
