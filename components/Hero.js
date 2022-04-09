@@ -7,7 +7,8 @@ const StyledHero = styled.div`
     justify-content: center;
     align-items: center;
 
-    height: 40vh;
+    /* height: 40vh; */
+    padding: 36px 0;
     background-color: aliceblue;
 
     h1 {
