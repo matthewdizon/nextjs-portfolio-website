@@ -179,8 +179,12 @@ export default function Home() {
             Software Developer
           </h2>
           <div className='cta-buttons'>
-            <button className='primary'>📑 View Resume</button>
-            <button className='secondary'>🗓 Schedule a Meeting</button>
+            <a href="/matthew-dizon-resume-4-4-2022.pdf" target="_blank" rel="noopener noreferrer">
+              <button className='primary'>📑 View Resume</button>
+            </a>
+            <a href="https://calendly.com/matthew-dizon/15-minute-meeting" target="_blank" rel="noopener noreferrer">
+              <button className='secondary'>🗓 Schedule a Meeting</button>
+            </a>
           </div>
           <div className='social-links'>
             <a href="https://github.com/matthewdizon" target="_blank" rel="noopener noreferrer">

@@ -211,7 +211,7 @@ export default function Navbar() {
                     <Link href="/contact">Contact</Link>
                 </li>
                 <li className={router.pathname == "/resume" ? "active" : ""} onClick={() => setOpen(!false)}>
-                    <a href="/matthew-dizon-resume-4-4-2022.pdf"><button>Resume</button></a>
+                    <a href="/matthew-dizon-resume-4-4-2022.pdf" target="_blank" rel="noopener noreferrer"><button>Resume</button></a>
                 </li>
             </ul>
         </StyledNav>

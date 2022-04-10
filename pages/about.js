@@ -50,7 +50,7 @@ const AboutContainer = styled.div`
         flex: 1 20%;
 
         border-radius: 4px;
-        padding: 1.5rem;
+        padding: 3rem;
         /* padding: 2rem; */
         text-align: center;
 
@@ -61,6 +61,17 @@ const AboutContainer = styled.div`
         box-shadow: rgba(0, 0, 0, 0.1) 4px 4px 4px 4px;
         background-color: aliceblue;
         /* margin: 0 1rem 1rem 0; */
+
+        transition: transform 1s;
+
+        img {
+            padding: 20px !important;
+        }
+
+        :hover {
+            cursor: pointer;
+            transform: translateY(-5px);
+        }
 
         @media (max-width: 600px) {
             flex: 1 25%;
@@ -181,64 +192,86 @@ export default function About() {
         "Artificial Intelligence",
         "Machine Learning",
         "Time Management",
+        "Communication",
+        "Organization",
+        "Planning",
+        "Problem-Solving",
+        "Flexibility",
+        "Writing",
+        "Public Speaking",
     ]
 
     const currents = [
-        "VP of Engineering @ User Experience Society",
-        "VP of Engineering @ User Experience Society",
-        "VP of Engineering @ User Experience Society",
-        "VP of Engineering @ User Experience Society",
-        "VP of Engineering @ User Experience Society",
+        "Looking for a Software Engineering Internship",
+        "Majoring in Management Information Systems and Specializing in Data Science and Analytics @ Ateneo de Manila University",
+        "Working as the Vice President of Engineering @ User Experience Society",
+        "Working as a Senior Software Engineer @ Google Developer Student Clubs Loyola",
+        "Reading The 4-Hour Work Week",
     ]
 
     const techs = [
-        "/github.svg",
-        "/github.svg",
-        "/github.svg",
-        "/atomic-habits.jpg",
-        "/chu.png",
-        "/chu.png",
-        "/chu.png",
-        "/chu.png",
+        "/react-js.png",
+        "/gatsby-js.png",
+        "/next-js.png",
+        "/graphql.png",
+        "/vercel.svg",
+        "/netlify.png",
+        "/prismic.png",
+        "/figma.png",
+        "/solana.png",
+        "/django.png",
+        "/mysql.png",
+        "/docker.png",
     ]
 
     const interests = [
         {
-            title: "🤖 Machine Learning",
+            title: "📚 Reading",
             description: "This is why I am interested in Machine Learning",
         },
         {
-            title: "🤖 Machine Learning",
+            title: "🌱 Self-Development",
             description: "This is why I am interested in Machine Learning",
         },
         {
-            title: "🤖 Machine Learning",
+            title: "🎙 Podcasts",
             description: "This is why I am interested in Machine Learning",
         },
         {
-            title: "🤖 Machine Learning",
+            title: "⛓ Blockchain Technology",
+            description: "Profits, new tech, want to teach others",
+        },
+        {
+            title: "🏋️‍♂️ Physical Fitness",
             description: "This is why I am interested in Machine Learning",
         },
+        
     ]
 
     const books = [
         {
-            title: "Atomic Habits",
-            description: "This book helped me understand how habits are formed and what we can do to build long-lasting chains of cues, cravings, responses, and rewards to create systems that will help us achieve our goals.",
+            title: "⚛ Atomic Habits",
+            description: "The book elaborates on how we can make/break habits by following 4 rules: making it obvious/invisible, making it attractive/unattractive, making it easy/difficult, making it satisfying/unsatisfying.",
             image: "/atomic-habits.jpg",
-            notes: "https://www.notion.so/matthewdizon/Atomic-Habits-0dab5352f58949ae87bae1b441c8b2f0",
+            notes: "https://matthewdizon.notion.site/Atomic-Habits-0dab5352f58949ae87bae1b441c8b2f0",
         },
         {
-            title: "Atomic Habits",
-            description: "This book helped me understand how habits are formed and what we can do to build long-lasting chains of cues, cravings, responses, and rewards to create systems that will help us achieve our goals.",
-            image: "/atomic-habits.jpg",
-            notes: "https://www.notion.so/matthewdizon/Atomic-Habits-0dab5352f58949ae87bae1b441c8b2f0",
+            title: "Eat That Frog 🐸",
+            description: "The book teaches you on how you can overcome procrastination with a variety (21) of productivity tips. It talks a lot about how we can dictate the value or importance of every task/activity, how we can prepare ourselves to jump into the task we have, and how we can (and should) accomplish our tasks fully.",
+            image: "/eat-that-frog.jpg",
+            notes: "https://matthewdizon.notion.site/Eat-That-Frog-c405f1bef77c405791ed9b8e30c27851",
         },
         {
-            title: "Atomic Habits",
-            description: "This book helped me understand how habits are formed and what we can do to build long-lasting chains of cues, cravings, responses, and rewards to create systems that will help us achieve our goals.",
-            image: "/atomic-habits.jpg",
-            notes: "https://www.notion.so/matthewdizon/Atomic-Habits-0dab5352f58949ae87bae1b441c8b2f0",
+            title: "🦸‍♂️ The Power of Habit",
+            description: "The book discusses the habit loop (cue, routine, and reward) and how we can notice it among individuals, organizations, and within the society.",
+            image: "/power-of-habit.jpg",
+            notes: "https://matthewdizon.notion.site/The-Power-of-Habit-fe45c6d3cc2345feb329f7b778e64011",
+        },
+        {
+            title: "The 7 Habits of Highly Effective People ⚙️",
+            description: "The book breaks the habits down into 3 main parts: Private Victory — where we learn to become independent; Public Victory — where we learn to become interdependent; and Renewal — where we are in a constant spiral of learning, committing, and doing.",
+            image: "/7-habits.jpg",
+            notes: "https://matthewdizon.notion.site/The-7-Habits-of-Highly-Effective-People-70c83d1636904183a7ed2808879c34fc",
         },
     ]
 
@@ -307,12 +340,12 @@ export default function About() {
                             return (
                                 <div className="book-container" key={index}>
                                     <div className="image-container">
-                                        <a href={book.notes}>
+                                        <a href={book.notes} target="_blank" rel="noopener noreferrer">
                                             <Image src={book.image} layout="fill" objectFit='contain' />
                                         </a>
                                     </div>
                                     <div className="info-container">
-                                        <a href={book.notes} rel="noopener noreferrer">
+                                        <a href={book.notes} target="_blank" rel="noopener noreferrer">
                                             <h3>{book.title}</h3>
                                         </a>
                                         <p>{book.description}</p>
