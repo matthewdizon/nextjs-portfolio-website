@@ -25,6 +25,11 @@ const AboutContainer = styled.div`
         width: 30%;
         margin-right: 40px;
 
+        .currently {
+            text-align: justify;
+            word-spacing:-2px;
+        }
+
         p {
             font-size: 20px;
         }
@@ -37,6 +42,17 @@ const AboutContainer = styled.div`
 
         .general-info {
             font-size: 24px;
+
+            .ideas {
+                li {
+                    margin: 16px 0;
+                }
+
+                span {
+                    color: #94C2A4;
+                    font-weight: 500;
+                }
+            }
         }
     }
 
@@ -226,26 +242,21 @@ export default function About() {
 
     const interests = [
         {
-            title: "📚 Reading",
-            description: "This is why I am interested in Machine Learning",
-        },
-        {
             title: "🌱 Self-Development",
-            description: "This is why I am interested in Machine Learning",
-        },
-        {
-            title: "🎙 Podcasts",
-            description: "This is why I am interested in Machine Learning",
+            description: "Ever since the COVID-19 pandemic, I spent a lot of time learning new things. It was March of 2020 when I wrote my first line of code and explored the whole industry of software development. By the following year, I started to read non-fiction books. I would get daily physical exercise. I would listen to podcasts and consume content that revolve around self-motivation and personal development. I find the time to meditate, journal, and reflect about my day/week. I am in a recursive process of understanding who I am and iterate between my plans for growth.",
         },
         {
             title: "⛓ Blockchain Technology",
-            description: "Profits, new tech, want to teach others",
+            description: "Some people view it as 'The Next Big Thing.' We have Cryptocurrencies, NFTs (Non-Fungible Tokens), and a ton of different blockchain networks that can achieve different things. I've been able to learn more about blockchain technology ever since Q3 of 2021 - I've invested in several cryptocurrencies through different platforms (Binance, KuCoin, Gate.io) and I've also been able to gain some profits by buying and selling NFTs on the Solana Blockchain Network. From time to time, I learn blockchain development (particularly Solana Development).",
         },
         {
             title: "🏋️‍♂️ Physical Fitness",
-            description: "This is why I am interested in Machine Learning",
+            description: "I've been playing Football ever since I was in Kindergarten. I was an active kid who would always enjoy to run around and embark in physical activities. With the online setup, I've spent a lot of time exercising at home through calisthenics and would also go jogging whenever I had the chance.",
         },
-        
+        {
+            title: "💰 Financial Literacy",
+            description: "As a student that has spent time freelancing and dabbling with investments, I've been able to deal with my own hard-earned money. I continue to seek for opportunities that could bring in more revenue, I find ways for me to utilize the skills and assets I have, and I constantly aim to achieve financial freedom.",
+        },
     ]
 
     const books = [
@@ -307,7 +318,15 @@ export default function About() {
                 <div className="main-content">
                     <div className="general-info">
                         <p>I see myself as a problem solver, an opportunity seeker, and a great fit for any team — I also am interested in taking leadership roles.</p>
-                        <p>EDIT ME! Personal development, productivity, life organization</p>
+                        {/* <p>EDIT ME! Personal development, productivity, life organization</p> */}
+                        <div className="ideas">
+                            <p>Ideas I Live By:</p>
+                            <ol>
+                                <li><span>Have a Growth Mindset.</span> It helps to look past our failures and view them as steps required for you to continue moving forward. Whenever we deal with challenges, view them as opportunities for you to step out of your comfort zone.</li>
+                                <li><span>We Never Stop Learning.</span> May it be in any aspects of our lives, there's always something new for you to learn. Have a system that can help you capture these ideas and apply them into your personal endeavors. </li>
+                                <li><span>Be a Solution Finder.</span> With the technology we have in our hands, a simple Google Search can provide us numerous resources that we may need to move past any hurdles we encounter. Having the ability to independently solve problems can lead you to success.</li>
+                            </ol>
+                        </div>
                         <p>When I'm not writing code, you could find me reading and learning about new technologies, monitoring different cryptocurrency values, or organizing my virtual workspaces.</p>
                     </div>
                     <h2>Technology Stack</h2>

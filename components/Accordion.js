@@ -5,9 +5,15 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import styled from 'styled-components'
 
-const StyledAccordion = styled.div`
+const StyledAccordion = styled.div` 
+    margin: 16px 0;
+    
     .accordion-container {
         margin: 16px 0;
+
+        p {
+          line-height: 30px;
+        }
     }
 `
 
