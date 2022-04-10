@@ -26,14 +26,14 @@ export default function Layout({children, title}) {
                 <meta property="og:url" content="https://www.matthewdizon.com/" />
                 <meta property="og:title" content={`Matthew Dizon | ${title}`} />
                 <meta property="og:description" content="Hi, I'm Matthew. I'm a student and a software developer who is highly inclined to personal development and blockchain technology." />
-                <meta property="og:image" content="/wedding.jpeg" />
+                <meta property="og:image" content="https://www.matthewdizon.com/wedding.jpeg" />
 
                 {/* <!-- Twitter --> */}
                 <meta property="twitter:card" content="summary_large_image" />
                 <meta property="twitter:url" content="https://www.matthewdizon.com/" />
                 <meta property="twitter:title" content={`Matthew Dizon | ${title}`} />
                 <meta property="twitter:description" content="Hi, I'm Matthew. I'm a student and a software developer who is highly inclined to personal development and blockchain technology." />
-                <meta property="twitter:image" content="/wedding.jpeg"></meta>
+                <meta property="twitter:image" content="https://www.matthewdizon.com/wedding.jpeg"></meta>
             </Head>
             <Navbar />
             <main>{children}</main>
