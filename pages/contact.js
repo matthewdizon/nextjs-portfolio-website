@@ -131,31 +131,25 @@ export default function Contact() {
             emoji: "📧",
             title: "Email",
             description: "Send me an email at dominic.dizon@obf.ateneo.edu",
+            link: "mailto:dominic.dizon@obf.ateneo.edu"
         },
         {
-            emoji: "📧",
-            title: "Email",
-            description: "Send me an email at dominic.dizon@obf.ateneo.edu",
+            emoji: "📞",
+            title: "Telegram",
+            description: "Send me a message on Telegram",
+            link: "https://t.me/nozid_matthew"
         },
         {
-            emoji: "📧",
-            title: "Email",
-            description: "Send me an email at dominic.dizon@obf.ateneo.edu",
+            emoji: "🤝",
+            title: "LinkedIn",
+            description: "Connect with me on LinkedIn",
+            link: "https://www.linkedin.com/in/mdominicdizon/"
         },
         {
-            emoji: "📧",
-            title: "Email",
-            description: "Send me an email at dominic.dizon@obf.ateneo.edu",
-        },
-        {
-            emoji: "📧",
-            title: "Email",
-            description: "Send me an email at dominic.dizon@obf.ateneo.edu",
-        },
-        {
-            emoji: "📧",
-            title: "Email",
-            description: "Send me an email at dominic.dizon@obf.ateneo.edu",
+            emoji: "💬",
+            title: "Messenger",
+            description: "Have a chat with me on Facebook/Messenger",
+            link: "https://m.me/nozid16",
         },
     ]
 
@@ -168,11 +162,13 @@ export default function Contact() {
             <ContactContainer>
                 {contacts.map((contact, index) => {
                     return (
-                        <div className="contact" key={index}>
-                            <span>{contact.emoji}</span>
-                            <h2>{contact.title}</h2>
-                            <p>{contact.description}</p>
-                        </div>
+                        <a href={contact.link} className="contact" key={index} target="_blank">
+                            <div>
+                                <span>{contact.emoji}</span>
+                                <h2>{contact.title}</h2>
+                                <p>{contact.description}</p>
+                            </div>
+                        </a>
                     )
                 })}
             </ContactContainer>
