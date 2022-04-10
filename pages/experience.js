@@ -7,7 +7,7 @@ const experiences = [
         position: "Vice President of Engineering",
         organization: "User Experience Society",
         date: "June '20 - Jaunary '21",
-        image: "/atomic-habits.jpg",
+        image: "/uxsoc.png",
         accomplishments: [
             "this is my first accomplishment",
             "this is my second accomplishment",
@@ -16,9 +16,9 @@ const experiences = [
     },
     {
         position: "Vice President of Engineering",
-        organization: "User Experience Society",
+        organization: "DSC",
         date: "June '20 - Jaunary '21",
-        image: "/atomic-habits.jpg",
+        image: "/gdsc.png",
         accomplishments: [
             "this is my first accomplishment",
             "this is my second accomplishment",
@@ -27,9 +27,9 @@ const experiences = [
     },
     {
         position: "Vice President of Engineering",
-        organization: "User Experience Society",
+        organization: "Punta",
         date: "June '20 - Jaunary '21",
-        image: "/atomic-habits.jpg",
+        image: "/punta.jpeg",
         accomplishments: [
             "this is my first accomplishment",
             "this is my second accomplishment",
@@ -38,9 +38,9 @@ const experiences = [
     },
     {
         position: "Vice President of Engineering",
-        organization: "User Experience Society",
+        organization: "MISA",
         date: "June '20 - Jaunary '21",
-        image: "/atomic-habits.jpg",
+        image: "/misa.png",
         accomplishments: [
             "this is my first accomplishment",
             "this is my second accomplishment",
@@ -49,9 +49,31 @@ const experiences = [
     },
     {
         position: "Vice President of Engineering",
-        organization: "User Experience Society",
+        organization: "XUSHS SG",
         date: "June '20 - Jaunary '21",
-        image: "/atomic-habits.jpg",
+        image: "/xu-shs-sg.png",
+        accomplishments: [
+            "this is my first accomplishment",
+            "this is my second accomplishment",
+            "this is my third accomplishment",
+        ],
+    },
+    {
+        position: "Vice President of Engineering",
+        organization: "XUSHS Football Varsity Team",
+        date: "June '20 - Jaunary '21",
+        image: "/xu-crusaders.jpg",
+        accomplishments: [
+            "this is my first accomplishment",
+            "this is my second accomplishment",
+            "this is my third accomplishment",
+        ],
+    },
+    {
+        position: "Vice President of Engineering",
+        organization: "XUJHS LCLC",
+        date: "June '20 - Jaunary '21",
+        image: "/xu-lclc.jpeg",
         accomplishments: [
             "this is my first accomplishment",
             "this is my second accomplishment",

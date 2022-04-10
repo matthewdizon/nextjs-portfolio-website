@@ -128,8 +128,8 @@ export default function Projects() {
         },
         {
             link: "https://oursanggu.com/",
-            image: "/sanggu.png",
-            title: "OurSanggu ADMU Website",
+            image: "/aegis.png",
+            title: "Aegis ADMU Website",
             description: "Sole Autonomous Student Government of Ateneo de Manila University",
             tech: [
                 "React",
@@ -139,8 +139,8 @@ export default function Projects() {
         },
         {
             link: "https://oursanggu.com/",
-            image: "/sanggu.png",
-            title: "OurSanggu ADMU Website",
+            image: "/uxsoc-apps.png",
+            title: "UXSoc Applications Website",
             description: "Sole Autonomous Student Government of Ateneo de Manila University",
             tech: [
                 "React",
@@ -150,8 +150,63 @@ export default function Projects() {
         },
         {
             link: "https://oursanggu.com/",
-            image: "/sanggu.png",
-            title: "OurSanggu ADMU Website",
+            image: "/heights.png",
+            title: "Heights Ateneo Website",
+            description: "Sole Autonomous Student Government of Ateneo de Manila University",
+            tech: [
+                "React",
+                "Gatsby",
+                "Prismic"
+            ]
+        },
+        {
+            link: "https://oursanggu.com/",
+            image: "/dcf.png",
+            title: "About Degen Coin Flip Website",
+            description: "Sole Autonomous Student Government of Ateneo de Manila University",
+            tech: [
+                "React",
+                "Gatsby",
+                "Prismic"
+            ]
+        },
+        {
+            link: "https://oursanggu.com/",
+            image: "/monkeball.png",
+            title: "Heavens 7s Lotto Website",
+            description: "Sole Autonomous Student Government of Ateneo de Manila University",
+            tech: [
+                "React",
+                "Gatsby",
+                "Prismic"
+            ]
+        },
+        {
+            link: "https://oursanggu.com/",
+            image: "/monkeball.png",
+            title: "Solana Monke Ball Website",
+            description: "Sole Autonomous Student Government of Ateneo de Manila University",
+            tech: [
+                "React",
+                "Gatsby",
+                "Prismic"
+            ]
+        },
+        {
+            link: "https://oursanggu.com/",
+            image: "/monkeball.png",
+            title: "Netzon To-Do",
+            description: "Sole Autonomous Student Government of Ateneo de Manila University",
+            tech: [
+                "React",
+                "Gatsby",
+                "Prismic"
+            ]
+        },
+        {
+            link: "https://oursanggu.com/",
+            image: "/monkeball.png",
+            title: "Pomotodo",
             description: "Sole Autonomous Student Government of Ateneo de Manila University",
             tech: [
                 "React",
