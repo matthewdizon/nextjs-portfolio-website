@@ -162,7 +162,7 @@ export default function Contact() {
             <ContactContainer>
                 {contacts.map((contact, index) => {
                     return (
-                        <a href={contact.link} className="contact" key={index} target="_blank">
+                        <a href={contact.link} className="contact" key={index} target="_blank" rel="noopener noreferrer">
                             <div>
                                 <span>{contact.emoji}</span>
                                 <h2>{contact.title}</h2>
