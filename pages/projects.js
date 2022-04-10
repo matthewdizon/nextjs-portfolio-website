@@ -26,13 +26,13 @@ const Project = styled.div`
 
     margin-bottom: 24px;
 
-    :last-child {
+    /* :last-child {
         flex: 0 0 45%;
 
         @media (max-width: 624px) {
             flex: 1 1 45%;
         }
-    }
+    } */
 
     .image-container {
         position: relative;
@@ -80,12 +80,13 @@ const Project = styled.div`
         .tech-container {
             display: flex;
             padding-bottom: 16px;
+            flex-wrap: wrap;
             
             .tech {
                 font-size: 12px;
                 font-weight: 600;
                 padding: 2px 16px;
-                margin: 0 8px 0 0;
+                margin: 0 8px 8px 0;
                 box-shadow: rgba(0, 0, 0, 0.1) 2px 2px 2px 2px;
                 border-radius: 10px;
 
@@ -127,91 +128,67 @@ export default function Projects() {
             ]
         },
         {
-            link: "https://oursanggu.com/",
+            link: "https://aegis.ateneo.edu/",
             image: "/aegis.png",
             title: "Aegis ADMU Website",
-            description: "Sole Autonomous Student Government of Ateneo de Manila University",
+            description: "Yearbook Committee of Ateneo de Manila University",
             tech: [
                 "React",
                 "Gatsby",
-                "Prismic"
+                "Django"
             ]
         },
         {
-            link: "https://oursanggu.com/",
+            link: "https://apps.uxsociety.org/",
             image: "/uxsoc-apps.png",
             title: "UXSoc Applications Website",
-            description: "Sole Autonomous Student Government of Ateneo de Manila University",
+            description: "Primer and Application for UXSociety Applicants",
             tech: [
                 "React",
                 "Gatsby",
-                "Prismic"
+                "Netlify CMS"
             ]
         },
         {
-            link: "https://oursanggu.com/",
+            link: "https://heights-ateneo.com/",
             image: "/heights.png",
             title: "Heights Ateneo Website",
-            description: "Sole Autonomous Student Government of Ateneo de Manila University",
+            description: "Literary and Artistic Publication and Organization of the Ateneo de Manila University",
             tech: [
                 "React",
                 "Gatsby",
-                "Prismic"
+                "Contentful",
+                "Typescript",
             ]
         },
         {
-            link: "https://oursanggu.com/",
+            link: "https://treknbrew.netlify.app/",
+            image: "/trek-n-brew.png",
+            title: "Mangkalalot Trek & Brew",
+            description: "River Trekking and Camping in Malaybalay City",
+            tech: [
+                "React",
+                "Gatsby",
+                "Prismic",
+                "GraphQL"
+            ]
+        },
+        {
+            link: "https://about.degencoinflip.com/",
             image: "/dcf.png",
             title: "About Degen Coin Flip Website",
-            description: "Sole Autonomous Student Government of Ateneo de Manila University",
+            description: "Landing page for a blockchain application where you could double your Solana",
             tech: [
                 "React",
-                "Gatsby",
-                "Prismic"
             ]
         },
         {
-            link: "https://oursanggu.com/",
-            image: "/monkeball.png",
-            title: "Heavens 7s Lotto Website",
-            description: "Sole Autonomous Student Government of Ateneo de Manila University",
-            tech: [
-                "React",
-                "Gatsby",
-                "Prismic"
-            ]
-        },
-        {
-            link: "https://oursanggu.com/",
+            link: "https://www.solanamonkeball.com/",
             image: "/monkeball.png",
             title: "Solana Monke Ball Website",
-            description: "Sole Autonomous Student Government of Ateneo de Manila University",
+            description: "Landing page for a blockchain lottery where you could buy tickets and win prizes",
             tech: [
                 "React",
-                "Gatsby",
-                "Prismic"
-            ]
-        },
-        {
-            link: "https://oursanggu.com/",
-            image: "/monkeball.png",
-            title: "Netzon To-Do",
-            description: "Sole Autonomous Student Government of Ateneo de Manila University",
-            tech: [
-                "React",
-                "Gatsby",
-                "Prismic"
-            ]
-        },
-        {
-            link: "https://oursanggu.com/",
-            image: "/monkeball.png",
-            title: "Pomotodo",
-            description: "Sole Autonomous Student Government of Ateneo de Manila University",
-            tech: [
-                "React",
-                "Gatsby",
-                "Prismic"
             ]
         },
     ]
