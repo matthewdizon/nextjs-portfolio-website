@@ -33,6 +33,10 @@ const ContactContainer = styled.div`
             cursor: pointer;
             transform: translateY(-3px);
         }
+
+        @media (max-width: 560px) {
+            flex: 1 0 51%;
+        }
     }
 
     @media (max-width: 900px) {
