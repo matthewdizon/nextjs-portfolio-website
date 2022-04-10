@@ -4,20 +4,9 @@ import ExperienceTimeline from "../components/Timeline"
 
 const experiences = [
     {
-        position: "Vice President of Engineering",
-        organization: "User Experience Society",
-        date: "June '20 - Jaunary '21",
-        image: "/uxsoc.png",
-        accomplishments: [
-            "this is my first accomplishment",
-            "this is my second accomplishment",
-            "this is my third accomplishment",
-        ],
-    },
-    {
-        position: "Vice President of Engineering",
-        organization: "DSC",
-        date: "June '20 - Jaunary '21",
+        position: "Senior Software Engineer",
+        organization: "Google Developer Student Club Loyola",
+        date: "October '21 - Present",
         image: "/gdsc.png",
         accomplishments: [
             "this is my first accomplishment",
@@ -27,6 +16,50 @@ const experiences = [
     },
     {
         position: "Vice President of Engineering",
+        organization: "User Experience Society",
+        date: "June '21 - Present",
+        image: "/uxsoc.png",
+        accomplishments: [
+            "this is my first accomplishment",
+            "this is my second accomplishment",
+            "this is my third accomplishment",
+        ],
+    },
+    {
+        position: "AVP for Backend Engineering",
+        organization: "User Experience Society",
+        date: "February '21 - June '21",
+        image: "/uxsoc.png",
+        accomplishments: [
+            "this is my first accomplishment",
+            "this is my second accomplishment",
+            "this is my third accomplishment",
+        ],
+    },
+    {
+        position: "Web Engineering Committee Member",
+        organization: "Google Developer Student Club Loyola",
+        date: "November '20 - May '21",
+        image: "/gdsc.png",
+        accomplishments: [
+            "this is my first accomplishment",
+            "this is my second accomplishment",
+            "this is my third accomplishment",
+        ],
+    },
+    {
+        position: "eServices Developer Training Pool Member",
+        organization: "Ateneo Management Information Systems Association",
+        date: "November '20 - May '21",
+        image: "/misa.png",
+        accomplishments: [
+            "this is my first accomplishment",
+            "this is my second accomplishment",
+            "this is my third accomplishment",
+        ],
+    },
+    {
+        position: "Co-Founder & Chief Technology Officer",
         organization: "Punta",
         date: "June '20 - Jaunary '21",
         image: "/punta.jpeg",
@@ -37,20 +70,9 @@ const experiences = [
         ],
     },
     {
-        position: "Vice President of Engineering",
-        organization: "MISA",
-        date: "June '20 - Jaunary '21",
-        image: "/misa.png",
-        accomplishments: [
-            "this is my first accomplishment",
-            "this is my second accomplishment",
-            "this is my third accomplishment",
-        ],
-    },
-    {
-        position: "Vice President of Engineering",
-        organization: "XUSHS SG",
-        date: "June '20 - Jaunary '21",
+        position: "Senior High School Ambassador",
+        organization: "Xavier University Ateneo de Cagayan (SHS) - Student Government",
+        date: "June '18 - March '19",
         image: "/xu-shs-sg.png",
         accomplishments: [
             "this is my first accomplishment",
@@ -59,9 +81,9 @@ const experiences = [
         ],
     },
     {
-        position: "Vice President of Engineering",
-        organization: "XUSHS Football Varsity Team",
-        date: "June '20 - Jaunary '21",
+        position: "Varsity Team Captain",
+        organization: "Xavier University Ateneo de Cagayan (SHS) - Football Varsity Team",
+        date: "June '18 - March '19",
         image: "/xu-crusaders.jpg",
         accomplishments: [
             "this is my first accomplishment",
@@ -70,9 +92,9 @@ const experiences = [
         ],
     },
     {
-        position: "Vice President of Engineering",
-        organization: "XUJHS LCLC",
-        date: "June '20 - Jaunary '21",
+        position: "Fund Committee Head",
+        organization: "Xavier University Ateneo de Cagayan (JHS) - Light Cavalry Leadership Community",
+        date: "June '16 - March '17",
         image: "/xu-lclc.jpeg",
         accomplishments: [
             "this is my first accomplishment",
