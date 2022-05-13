@@ -26,13 +26,13 @@ const Project = styled.div`
 
     margin-bottom: 24px;
 
-    /* :last-child {
+    :last-child {
         flex: 0 0 45%;
 
         @media (max-width: 624px) {
             flex: 1 1 45%;
         }
-    } */
+    }
 
     .image-container {
         position: relative;
@@ -124,7 +124,8 @@ export default function Projects() {
             tech: [
                 "React",
                 "Gatsby",
-                "Prismic"
+                "Prismic",
+                "GraphQL"
             ]
         },
         {
@@ -183,10 +184,19 @@ export default function Projects() {
             ]
         },
         {
+            link: "https://godzid-hsl.netlify.app/",
+            image: "/hsl.png",
+            title: "Heavens 7s Lotto",
+            description: "Solana blockchain lottery where you could buy tickets, win prizes, and view a hall of winners",
+            tech: [
+                "React",
+            ]
+        },
+        {
             link: "https://www.solanamonkeball.com/",
             image: "/monkeball.png",
             title: "Solana Monke Ball Website",
-            description: "Landing page for a blockchain lottery where you could buy tickets and win prizes",
+            description: "Landing page for a Solana blockchain lottery where you could buy tickets and win prizes",
             tech: [
                 "React",
             ]
