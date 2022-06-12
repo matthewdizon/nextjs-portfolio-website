@@ -27,7 +27,7 @@ const Project = styled.div`
     margin-bottom: 24px;
 
     :last-child {
-        flex: 0 0 45%;
+        /* flex: 0 0 45%; // comment this out if there are EVEN number of projects. */
 
         @media (max-width: 624px) {
             flex: 1 1 45%;
@@ -207,7 +207,8 @@ export default function Projects() {
             title: "Zankoku Raffle Website",
             description: "Landing page for a Solana blockchain raffle system where you could buy tickets and win NFTs",
             tech: [
-                "React", "Solana"
+                "React", 
+                "Solana"
             ]
         },
     ]
