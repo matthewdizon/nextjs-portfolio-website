@@ -201,6 +201,15 @@ export default function Projects() {
                 "React",
             ]
         },
+        {
+            link: "https://zankoku-godzidcrypto.vercel.app/",
+            image: "/zankoku.png",
+            title: "Zankoku Raffle Website",
+            description: "Landing page for a Solana blockchain raffle system where you could buy tickets and win NFTs",
+            tech: [
+                "React", "Solana"
+            ]
+        },
     ]
     
     return (
