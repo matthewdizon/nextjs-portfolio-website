@@ -5,7 +5,8 @@ import Layout from "../components/Layout"
 import Hero from "../components/Hero"
 
 const ProjectsContainer = styled.div`
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     flex-wrap: wrap;
     padding: 24px 96px;
     column-gap: 50px;
@@ -17,6 +18,10 @@ const ProjectsContainer = styled.div`
     @media (max-width: 400px) {
         padding: 24px;
     }
+
+    @media (max-width: 595px) {
+        grid-template-columns: 1fr;
+    }
 `
 
 const Project = styled.div`
@@ -26,31 +31,28 @@ const Project = styled.div`
 
     margin-bottom: 24px;
 
-    :last-child {
-        /* flex: 0 0 45%; // comment this out if there are EVEN number of projects. */
-
-        @media (max-width: 624px) {
-            flex: 1 1 45%;
-        }
-    }
-
     .image-container {
         position: relative;
         height: 300px;
         border-radius: 8px;
         box-shadow: rgba(0, 0, 0, 0.1) 8px 8px 8px 8px;
 
-        transition-duration: 0.3s;
-        transition-property: transform;
+        transition-duration: 0.5s;
+        transition-property: all;
 
         img {
             border-radius: 8px;
             transition-duration: 0.3s;
-            transition-property: transform;
+            transition-property: all;
+            /* transition: all; */
 
             :hover {
                 transform: scale(1.05);
             }
+        }
+
+        :hover {
+            box-shadow: #B3D4EC 0px 8px 24px 16px;
         }
     }
 
@@ -211,6 +213,26 @@ export default function Projects() {
                 "Solana"
             ]
         },
+        {
+            link: "https://kods-staking.vercel.app/",
+            image: "/kods.png",
+            title: "Kings of Da Street Staking Website",
+            description: "Website to stake and lock your KODS Solana NFTs",
+            tech: [
+                "React", 
+                "Solana"
+            ]
+        },
+        // {
+        //     link: "https://zankoku-godzidcrypto.vercel.app/",
+        //     image: "/zankoku.png",
+        //     title: "Trippy Worlds Raffle Website",
+        //     description: "Landing page for a Solana blockchain raffle system where you could buy tickets and win NFTs",
+        //     tech: [
+        //         "React", 
+        //         "Solana"
+        //     ]
+        // },
     ]
     
     return (
