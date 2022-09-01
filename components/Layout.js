@@ -31,14 +31,12 @@ export default function Layout({ children, title }) {
         <title>Matthew Dizon | {title}</title>
         <link rel="icon" href="/favicon.ico" />
 
-        {/* <!-- Primary Meta Tags --> */}
         <meta name="title" content={`Matthew Dizon | ${title}`} />
         <meta
           name="description"
           content="Hi, I'm Matthew. I'm a student and a software developer who is highly inclined to personal development and blockchain technology."
         />
 
-        {/* <!-- Open Graph / Facebook --> */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.matthewdizon.com/" />
         <meta property="og:title" content={`Matthew Dizon | ${title}`} />
@@ -51,7 +49,6 @@ export default function Layout({ children, title }) {
           content="https://www.matthewdizon.com/wedding.jpeg"
         />
 
-        {/* <!-- Twitter --> */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://www.matthewdizon.com/" />
         <meta property="twitter:title" content={`Matthew Dizon | ${title}`} />
