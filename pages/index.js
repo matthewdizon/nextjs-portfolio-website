@@ -1,7 +1,7 @@
-import styled from 'styled-components'
-import Layout from '../components/Layout'
-import Image from 'next/image'
-import Typewriter from 'typewriter-effect';
+import styled from "styled-components";
+import Layout from "../components/Layout";
+import Image from "next/image";
+import Typewriter from "typewriter-effect";
 
 const StyledHome = styled.div`
   background-color: aliceblue;
@@ -26,32 +26,31 @@ const StyledHome = styled.div`
       font-size: 40px;
 
       .Typewriter {
-        color: #5F706A;
+        color: #5f706a;
       }
     }
 
     .cta-buttons {
-
       button {
         padding: 12px 32px;
         border-radius: 8px;
         border: black;
-        background-color: #B3D5ED;
+        background-color: #b3d5ed;
         color: white;
 
         :hover {
-            cursor: pointer;
-            background-color: #3172C1;
+          cursor: pointer;
+          background-color: #3172c1;
         }
       }
 
       .secondary {
         margin-left: 8px;
-        background-color: #95C3A5;
+        background-color: #95c3a5;
         color: white;
 
         :hover {
-            background-color: #5F706A;
+          background-color: #5f706a;
         }
       }
     }
@@ -71,7 +70,7 @@ const StyledHome = styled.div`
       }
     }
   }
-  
+
   .image {
     height: 100%;
     width: 50%;
@@ -133,7 +132,8 @@ const StyledHome = styled.div`
       justify-content: center;
     }
 
-    .info, .image {
+    .info,
+    .image {
       width: 100%;
     }
 
@@ -153,55 +153,82 @@ const StyledHome = styled.div`
 
     .cta-buttons {
       flex-direction: column;
-      
+
       .secondary {
         margin: 8px 0 0 0 !important;
       }
     }
   }
-`
+`;
 
 export default function Home() {
   return (
     <Layout title="Home">
       <StyledHome>
-        <div className='info'>
-          <h1>Hello, I'm <span>Matthew Dizon</span></h1>
+        <div className="info">
+          <h1>
+            Hello, I'm <span>Matthew Dizon</span>
+          </h1>
           <h2>
             <Typewriter
               options={{
                 // strings: ["I'm a Frontend Software Developer", "I'm a Frontend Software Developer", "I'm a Frontend Software Developer"],
-                strings: ['Frontend', 'Backend', 'Full Stack'],
+                strings: ["Frontend", "Backend", "Full Stack"],
                 autoStart: true,
                 loop: true,
               }}
-            /> 
+            />
             Software Developer
           </h2>
-          <div className='cta-buttons'>
-            <a href="/matthew-dizon-resume-4-4-2022.pdf" target="_blank" rel="noopener noreferrer">
-              <button className='primary'>📑 View Resume</button>
+          <div className="cta-buttons">
+            <a
+              href="/matthew-dizon-resume-feb-20-2023.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="primary">📑 View Resume</button>
             </a>
-            <a href="https://calendly.com/matthew-dizon/15-minute-meeting" target="_blank" rel="noopener noreferrer">
-              <button className='secondary'>🗓 Schedule a Meeting</button>
+            <a
+              href="https://calendly.com/matthew-dizon/15-minute-meeting"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="secondary">🗓 Schedule a Meeting</button>
             </a>
           </div>
-          <div className='social-links'>
-            <a href="https://github.com/matthewdizon" target="_blank" rel="noopener noreferrer">
+          <div className="social-links">
+            <a
+              href="https://github.com/matthewdizon"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Image src="/github.svg" height={30} width={30} />
             </a>
-            <a href="https://www.facebook.com/Nozid16/" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.facebook.com/Nozid16/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Image src="/fb.svg" height={30} width={30} />
             </a>
-            <a href="https://www.linkedin.com/in/matthewdominicdizon/" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.linkedin.com/in/matthewdominicdizon/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Image src="/linkedin.svg" height={30} width={30} />
             </a>
           </div>
         </div>
-        <div className='image'>
-          <Image src="/chu.png" alt="Matthew Dizon" layout="fill" objectFit='cover' />
+        <div className="image">
+          <Image
+            src="/chu.png"
+            alt="Matthew Dizon"
+            layout="fill"
+            objectFit="cover"
+          />
         </div>
       </StyledHome>
     </Layout>
-  )
+  );
 }
