@@ -1,6 +1,12 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-}
-
-module.exports = nextConfig
+module.exports = {
+  async redirects() {
+    return [
+      {
+        source: "/rickroll",
+        destination: "https://www.youtube.com/watch?v=eBGIQ7ZuuiU",
+        permanent: false,
+        basePath: false,
+      },
+    ];
+  },
+};
