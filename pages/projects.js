@@ -192,11 +192,28 @@ export default function Projects() {
       tech: ["React", "Solana"],
     },
     {
-      link: "https://nft-radar.vercel.app/",
+      link: "http://nftradar.news/",
       image: "/nftradar.png",
       title: "NFT Radar Blog",
       description:
         "A community that does research on upcoming NFT and Crypto projects",
+      tech: ["MongoDB", "Express", "React", "Node"],
+    },
+
+    {
+      link: "http://misa.org.ph/",
+      image: "/misa.jpg",
+      title: "Management Information Systems Association",
+      description:
+        "A website for the home organization of MIS majors and like-minded IT enthusiasts",
+      tech: ["GraphQL", "Gatsby", "Contentful", "Node"],
+    },
+    {
+      link: "https://www.shpcreditcoop.com",
+      image: "/shpcc.jpg",
+      title: "Sacred Heart Parish Credit Cooperative",
+      description:
+        "A static website and a portal that handles membership and loan applications, developed as a Capstone project",
       tech: ["MongoDB", "Express", "React", "Node"],
     },
     // {
@@ -219,7 +236,7 @@ export default function Projects() {
           description="Check out all of the projects I've made contributions to throughout my career as a software developer!"
         />
         <ProjectsContainer>
-          {projects.map((project, index) => {
+          {projects.reverse().map((project, index) => {
             return (
               <Project key={index}>
                 <div className="image-container">
