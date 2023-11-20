@@ -225,7 +225,7 @@ export default function Navbar() {
           onClick={() => setOpen(!false)}
         >
           <a
-            href="/matthew-dizon-resume-feb-20-2023.pdf"
+            href="/DIZON_MATTHEW_RESUME.pdf"
             target="_blank"
             rel="noopener noreferrer"
           >
