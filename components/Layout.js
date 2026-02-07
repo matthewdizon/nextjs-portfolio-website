@@ -28,7 +28,7 @@ export default function Layout({ children, title }) {
     `}
       </Script>
       <Head>
-        <title>Matthew Dizon | {title}</title>
+        <title>{`Matthew Dizon | ${title}`}</title>
         <link rel="icon" href="/favicon.ico" />
 
         <meta name="title" content={`Matthew Dizon | ${title}`} />
