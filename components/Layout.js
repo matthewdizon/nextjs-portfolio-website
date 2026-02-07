@@ -2,13 +2,25 @@ import Head from "next/head";
 import Navbar from "./Navbar";
 import styled from "styled-components";
 import Footer from "./Footer";
-import { useRouter } from "next/router";
 import Script from "next/script";
 
 const StyledLayout = styled.div``;
 
-export default function Layout({ children, title }) {
-  const router = useRouter();
+export default function Layout({
+  children,
+  title,
+  description,
+  image,
+  showFooter = true,
+}) {
+  const metaTitle = title
+    ? `Matthew Dizon | ${title}`
+    : "Matthew Dizon | Full-Stack Software Engineer";
+  const metaDescription =
+    description ||
+    "Full-stack software engineer building modern, accessible web experiences.";
+  const metaImage =
+    image || "https://www.matthewdizon.com/wedding.jpeg";
 
   return (
     <StyledLayout>
@@ -28,42 +40,38 @@ export default function Layout({ children, title }) {
     `}
       </Script>
       <Head>
-        <title>Matthew Dizon | {title}</title>
+        <title>{metaTitle}</title>
         <link rel="icon" href="/favicon.ico" />
-
-        <meta name="title" content={`Matthew Dizon | ${title}`} />
-        <meta
-          name="description"
-          content="Hi, I'm Matthew. I'm a student and a software developer who is highly inclined to personal development and blockchain technology."
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
         />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
+
+        <meta name="title" content={metaTitle} />
+        <meta name="description" content={metaDescription} />
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.matthewdizon.com/" />
-        <meta property="og:title" content={`Matthew Dizon | ${title}`} />
-        <meta
-          property="og:description"
-          content="Hi, I'm Matthew. I'm a student and a software developer who is highly inclined to personal development and blockchain technology."
-        />
-        <meta
-          property="og:image"
-          content="https://www.matthewdizon.com/wedding.jpeg"
-        />
+        <meta property="og:title" content={metaTitle} />
+        <meta property="og:description" content={metaDescription} />
+        <meta property="og:image" content={metaImage} />
 
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://www.matthewdizon.com/" />
-        <meta property="twitter:title" content={`Matthew Dizon | ${title}`} />
-        <meta
-          property="twitter:description"
-          content="Hi, I'm Matthew. I'm a student and a software developer who is highly inclined to personal development and blockchain technology."
-        />
-        <meta
-          property="twitter:image"
-          content="https://www.matthewdizon.com/wedding.jpeg"
-        ></meta>
+        <meta property="twitter:title" content={metaTitle} />
+        <meta property="twitter:description" content={metaDescription} />
+        <meta property="twitter:image" content={metaImage} />
       </Head>
       <Navbar />
       <main>{children}</main>
-      {router.pathname == "/" ? null : <Footer />}
+      {showFooter ? <Footer /> : null}
     </StyledLayout>
   );
 }

@@ -1,238 +1,181 @@
 import Link from "next/link";
 import styled from "styled-components";
-import { useRouter } from "next/router";
 import { useState } from "react";
 
 const StyledNav = styled.nav`
-  height: 20vh;
-  padding: 0 96px;
-  background-color: aliceblue;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-border);
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  .nav-container {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
-  .nav-responsive {
-    .icon {
-      display: flex;
-      flex-direction: column;
+  .brand {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    color: var(--color-text);
+  }
 
-      :hover {
-        cursor: pointer;
-      }
+  .brand-name {
+    font-size: 18px;
+    font-weight: 600;
+  }
 
-      h1 {
-        margin: 0;
-      }
-
-      p {
-        margin: 0;
-        font-weight: 100;
-      }
-    }
-
-    .nav-burger {
-      display: none;
-      flex-direction: column;
-      justify-content: space-around;
-      width: 2rem;
-      height: 2rem;
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      z-index: 999;
-
-      div {
-        width: 2rem;
-        height: 0.15rem;
-        background: black;
-        border-radius: 10px;
-        transition: all 0.3s linear;
-        position: relative;
-        transform-origin: 1px;
-      }
-    }
+  .brand-role {
+    font-size: 12px;
+    color: var(--color-muted);
+    letter-spacing: 0.04em;
   }
 
   .nav-links {
     list-style: none;
     display: flex;
     align-items: center;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+  }
 
-    a {
-      margin: 0 16px;
+  .nav-links a {
+    color: var(--color-text);
+    font-weight: 500;
+  }
 
-      :hover {
-        color: gray;
-        text-decoration: underline;
-      }
-    }
+  .nav-links a:hover {
+    color: var(--color-accent);
+  }
 
-    button {
-      margin-left: 8px;
-      padding: 12px 32px;
-      border-radius: 8px;
-      border: black;
-      background-color: black;
-      color: white;
+  .resume {
+    padding: 10px 18px;
+    border-radius: 999px;
+    border: 1px solid var(--color-primary);
+    background: var(--color-primary);
+    color: #ffffff;
+    font-weight: 600;
+  }
 
-      :hover {
-        cursor: pointer;
-        background-color: rgba(31, 41, 55);
-      }
-    }
+  .resume:hover {
+    background: #111827;
+  }
 
-    .active {
-      font-weight: 600;
-    }
+  .burger {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 8px;
+  }
+
+  .burger span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--color-text);
+    margin: 3px 0;
   }
 
   @media (max-width: 900px) {
-    padding: 0 48px;
-    height: auto;
-  }
-
-  @media (max-width: 805px) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0;
-
-    .nav-responsive {
-      padding: 24px 48px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      width: 100%;
-
-      .nav-burger {
-        display: flex;
-      }
-    }
-
-    .hide-links {
-      display: none;
-    }
-
-    .nav-links-responsive {
-      /* display: none; */
-      margin: 0;
-      padding: 0 48px;
-
-      bottom: 0;
-      z-index: 99;
-
-      background-color: aliceblue;
+    .nav-links {
+      position: absolute;
+      top: 72px;
+      left: 0;
+      right: 0;
       flex-direction: column;
+      align-items: flex-start;
+      background: #ffffff;
+      padding: 16px 24px 24px;
+      border-bottom: 1px solid var(--color-border);
+      display: none;
+      gap: 16px;
+    }
 
+    .nav-links.open {
+      display: flex;
+    }
+
+    .burger {
+      display: inline-flex;
+    }
+
+    .resume {
       width: 100%;
-
-      text-align: left;
-
-      li {
-        width: 100%;
-        height: 100%;
-        padding: 8px 0;
-        border-bottom: 1px solid gray;
-
-        a {
-          margin: 0;
-          padding: 8px;
-          display: block;
-          /* background-color: red; */
-        }
-
-        :last-child {
-          border: none;
-        }
-      }
-
-      button {
-        margin: 0;
-        width: 100%;
-      }
-    }
-  }
-
-  @media (max-width: 400px) {
-    height: auto;
-
-    .nav-responsive {
-      padding: 24px;
-    }
-
-    .nav-links-responsive {
-      padding: 0 24px;
+      text-align: center;
     }
   }
 `;
 
 export default function Navbar() {
-  const router = useRouter();
-  const [open, setOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const navItems = [
+    { label: "Projects", href: "/#projects" },
+    { label: "Skills", href: "/#skills" },
+    { label: "Experience", href: "/#experience" },
+    { label: "Contact", href: "/#contact" },
+  ];
+
+  const handleNavClick = () => setIsOpen(false);
 
   return (
     <StyledNav>
-      <div className="nav-responsive">
-        <Link href="/">
-          <div className="icon">
-            <h1>Matthew Dizon</h1>
-            <p>Software Engineer</p>
-          </div>
-        </Link>
-        <div className="nav-burger" onClick={() => setOpen(!open)}>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-      </div>
-      {/* <div className='nav-links'>
-                <Link href="/about">About</Link>
-                <Link href="/projects">Projects</Link>
-                <Link href="/experience">Experience</Link>
-                <Link href="/contact">Contact</Link>
-                <Link href="/resume"><button>Resume</button></Link>
-            </div> */}
-      <ul
-        className={`${
-          open ? "nav-links hide-links" : "nav-links nav-links-responsive"
-        }`}
-      >
-        <li
-          className={router.pathname == "/about" ? "active" : ""}
-          onClick={() => setOpen(!false)}
-        >
-          <Link href="/about">About</Link>
-        </li>
-        <li
-          className={router.pathname == "/projects" ? "active" : ""}
-          onClick={() => setOpen(!false)}
-        >
-          <Link href="/projects">Projects</Link>
-        </li>
-        {/* <li className={router.pathname == "/experience" ? "active" : ""} onClick={() => setOpen(!false)}>
-                    <Link href="/experience">Experience</Link>
-                </li> */}
-        <li
-          className={router.pathname == "/contact" ? "active" : ""}
-          onClick={() => setOpen(!false)}
-        >
-          <Link href="/contact">Contact</Link>
-        </li>
-        <li
-          className={router.pathname == "/resume" ? "active" : ""}
-          onClick={() => setOpen(!false)}
-        >
-          <a
-            href="/DIZON_MATTHEW_RESUME.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <button>Resume</button>
+      <div className="nav-container">
+        <Link href="/" legacyBehavior>
+          <a className="brand" onClick={handleNavClick}>
+            <span className="brand-name">Matthew Dizon</span>
+            <span className="brand-role">Full-Stack Engineer</span>
           </a>
-        </li>
-      </ul>
+        </Link>
+
+        <button
+          className="burger"
+          type="button"
+          aria-label="Toggle navigation"
+          aria-expanded={isOpen}
+          aria-controls="primary-navigation"
+          onClick={() => setIsOpen((open) => !open)}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul
+          id="primary-navigation"
+          className={`nav-links ${isOpen ? "open" : ""}`}
+        >
+          {navItems.map((item) => (
+            <li key={item.href}>
+              <a href={item.href} onClick={handleNavClick}>
+                {item.label}
+              </a>
+            </li>
+          ))}
+          <li>
+            <a
+              className="resume"
+              href="/DIZON_MATTHEW_RESUME.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={handleNavClick}
+            >
+              Resume
+            </a>
+          </li>
+        </ul>
+      </div>
     </StyledNav>
   );
 }

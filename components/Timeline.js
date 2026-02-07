@@ -139,7 +139,12 @@ export default function ExperienceTimeline({experiences}) {
                             <TimelineContent>
                                 <div className="experience">
                                     <div className="image-container">
-                                        <Image src={experience.image} layout="fill" objectFit="cover" />
+                                        <Image
+                                            src={experience.image}
+                                            alt={`${experience.organization} logo`}
+                                            layout="fill"
+                                            objectFit="cover"
+                                        />
                                     </div>
                                     <div className="info-container">
                                         <h2>{experience.position}</h2>
