@@ -182,7 +182,7 @@ export default function Home() {
           </h2>
           <div className="cta-buttons">
             <a
-              href="/matthew-dizon-resume-feb-20-2023.pdf"
+              href="/DIZON_MATTHEW_RESUME.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >
