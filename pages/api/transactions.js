@@ -22,6 +22,13 @@ function sendError(res, statusCode, error) {
   });
 }
 
+function sendSuccess(res, statusCode, payload) {
+  return res.status(statusCode).json({
+    success: true,
+    ...payload,
+  });
+}
+
 function base64Url(input) {
   return Buffer.from(input)
     .toString("base64")
@@ -136,8 +143,7 @@ function formatSheetDate(date) {
   }).format(date);
 }
 
-async function getNextRowIndex() {
-  const accessToken = await getAccessToken();
+async function getNextRowIndex(accessToken) {
   const sheetId = requireEnv("GOOGLE_SHEET_ID");
   const sheetName = requireEnv("GOOGLE_SHEET_NAME");
   const range = `'${sheetName.replace(/'/g, "''")}'!A:A`;
@@ -162,11 +168,10 @@ async function getNextRowIndex() {
   return rows.length + 1;
 }
 
-async function writeRow(row) {
-  const accessToken = await getAccessToken();
+async function writeRow(row, accessToken) {
   const sheetId = requireEnv("GOOGLE_SHEET_ID");
   const sheetName = requireEnv("GOOGLE_SHEET_NAME");
-  const rowIndex = await getNextRowIndex();
+  const rowIndex = await getNextRowIndex(accessToken);
   const range = `'${sheetName.replace(/'/g, "''")}'!A${rowIndex}:D${rowIndex}`;
   const url = `${GOOGLE_SHEETS_API_BASE}/${encodeURIComponent(sheetId)}/values/${encodeURIComponent(
     range
@@ -212,6 +217,8 @@ module.exports = async function handler(req, res) {
     }
 
     const body = req.body || {};
+    const debugMode =
+      req.query && (req.query.debug === "1" || req.query.debug === "true");
     const amount = body.amount;
 
     if (typeof amount !== "number" || !Number.isFinite(amount)) {
@@ -219,12 +226,31 @@ module.exports = async function handler(req, res) {
     }
 
     const date = formatSheetDate(new Date());
+
+    if (debugMode) {
+      return sendSuccess(res, 200, {
+        mode: "debug",
+        method: req.method,
+        date,
+        received: {
+          amount,
+          category: normalizeText(body.category),
+          note: normalizeText(body.note),
+        },
+        headers: {
+          "content-type": req.headers["content-type"] || null,
+          "x-api-key": typeof providedApiKey === "string" ? "present" : "missing",
+        },
+      });
+    }
+
+    const accessToken = await getAccessToken();
     const appendedRow = await writeRow({
       date,
       amount,
       category: normalizeText(body.category),
       note: normalizeText(body.note),
-    });
+    }, accessToken);
 
     return res.status(200).json({
       success: true,

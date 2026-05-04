@@ -96,6 +96,23 @@ curl -X POST http://localhost:3000/api/transactions \
   }'
 ```
 
+### Debug mode
+
+Add `?debug=1` to the request URL to bypass Google Sheets and just echo what the server received.
+
+Example:
+
+```bash
+curl -X POST "http://localhost:3000/api/transactions?debug=1" \
+  -H "Content-Type: application/json" \
+  -H "x-api-key: YOUR_SECRET_KEY" \
+  -d '{
+    "amount": 129.5,
+    "category": "Food",
+    "note": "Lunch"
+  }'
+```
+
 ### iPhone Shortcuts setup
 
 Use the Shortcuts app with **Get Contents of URL**:
