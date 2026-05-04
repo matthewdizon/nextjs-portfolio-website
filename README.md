@@ -98,14 +98,13 @@ curl -X POST http://localhost:3000/api/transactions \
 
 ### Debug mode
 
-Add `?debug=1` to the request URL to bypass Google Sheets and just echo what the server received.
+Add `?debug=1` to the request URL to bypass Google Sheets and the API key check, then just echo what the server received.
 
 Example:
 
 ```bash
 curl -X POST "http://localhost:3000/api/transactions?debug=1" \
   -H "Content-Type: application/json" \
-  -H "x-api-key: YOUR_SECRET_KEY" \
   -d '{
     "amount": 129.5,
     "category": "Food",
@@ -127,6 +126,8 @@ Use the Shortcuts app with **Get Contents of URL**:
    - `category`
    - `note`
 5. Make sure `amount` is passed as a number, not text.
+
+For debugging, temporarily change the URL to `https://your-domain.com/api/transactions?debug=1` and remove the `x-api-key` header entirely.
 
 Example JSON body:
 

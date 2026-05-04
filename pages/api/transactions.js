@@ -209,6 +209,27 @@ module.exports = async function handler(req, res) {
   }
 
   try {
+    const body = req.body || {};
+    const debugMode =
+      req.query && (req.query.debug === "1" || req.query.debug === "true");
+
+    if (debugMode) {
+      return sendSuccess(res, 200, {
+        mode: "debug",
+        method: req.method,
+        date: formatSheetDate(new Date()),
+        received: {
+          amount: body.amount,
+          category: normalizeText(body.category),
+          note: normalizeText(body.note),
+        },
+        headers: {
+          "content-type": req.headers["content-type"] || null,
+          "x-api-key": typeof req.headers["x-api-key"] === "string" ? "present" : "missing",
+        },
+      });
+    }
+
     const expectedApiKey = requireEnv("API_SECRET_KEY");
     const providedApiKey = req.headers["x-api-key"];
 
@@ -216,9 +237,6 @@ module.exports = async function handler(req, res) {
       return sendError(res, 401, "Unauthorized");
     }
 
-    const body = req.body || {};
-    const debugMode =
-      req.query && (req.query.debug === "1" || req.query.debug === "true");
     const amount = body.amount;
 
     if (typeof amount !== "number" || !Number.isFinite(amount)) {
@@ -226,24 +244,6 @@ module.exports = async function handler(req, res) {
     }
 
     const date = formatSheetDate(new Date());
-
-    if (debugMode) {
-      return sendSuccess(res, 200, {
-        mode: "debug",
-        method: req.method,
-        date,
-        received: {
-          amount,
-          category: normalizeText(body.category),
-          note: normalizeText(body.note),
-        },
-        headers: {
-          "content-type": req.headers["content-type"] || null,
-          "x-api-key": typeof providedApiKey === "string" ? "present" : "missing",
-        },
-      });
-    }
-
     const accessToken = await getAccessToken();
     const appendedRow = await writeRow({
       date,
